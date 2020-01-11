@@ -34,7 +34,7 @@ public class PageCadastro {
 		HomePage.clicarmenu(driver).click();
 		HomePage.clicarCadastrar(driver).click();
 		
-		HomePage.nomeUsuario(driver).sendKeys("joice Natalice");
+		HomePage.nomeUsuario(driver).sendKeys("JoiceNatalice");
 		HomePage.emailUsuario(driver).sendKeys("joice_natalice16@hotmail.com");
 		HomePage.senhaUsuario(driver).sendKeys("Natalice24");
 		HomePage.confirmasenhaUsuario(driver).sendKeys("Natalice24");
@@ -47,16 +47,16 @@ public class PageCadastro {
 		HomePage.cidadeUsuario(driver).sendKeys("Taboao da Serra");
 		HomePage.enderecoUsuario(driver).sendKeys("Rua Albano Leite");
 		HomePage.estadoUsuario(driver).sendKeys("Sao Paulo");
-		HomePage.cepUsuario(driver).sendKeys("06773050");
+		HomePage.cepUsuario(driver).sendKeys("06773-050");
 		
 		HomePage.aceitaTermos(driver).isSelected();
-		HomePage.aceitatermos2(driver).isSelected();
-		HomePage.registraUsuario(driver).isSelected();
+		HomePage.aceitatermos2(driver).click();
+		HomePage.registraUsuario(driver).click();
 	}
 
 	@AfterClass
 	public static void finalizar() {
-		driver.quit();
+		//driver.quit();
 
 	}
 

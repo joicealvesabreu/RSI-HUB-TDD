@@ -7,6 +7,7 @@ import java.util.concurrent.TimeUnit;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -28,38 +29,42 @@ public class Page_Testes_Pesquisa {
 
 	@Test
 	public void testesbusca() throws Exception {
+		
 		ExcelUtils.setExcelFile(Constant.Path_TestData + Constant.File_TestData, "Planilha1");
 		
 	
 		Home_Page_PesquisaDeProduto.Pesquisa(driver).click();
 
-		Home_Page_PesquisaDeProduto.ProdutoPesquisado(driver).sendKeys(Constant.ProdutoPesquisado); //primiro é linha e depois a coluna
-
-		Home_Page_PesquisaDeProduto.Adicionarlapto(driver);
-
-		Home_Page_PesquisaDeProduto.Cordolaptop(driver).click();
-
-		Home_Page_PesquisaDeProduto.Selecionandoaocarinho(driver).click();
-
-		Home_Page_PesquisaDeProduto.Carinhopop(driver);
+		Home_Page_PesquisaDeProduto.ProdutoPesquisado(driver).sendKeys(ExcelUtils.getCellData(1, 0)+ Keys.ENTER); //primiro é linha e depois a coluna
 		
-		Home_Page_PesquisaDeProduto.Username(driver).sendKeys(Constant.Username);
+		Home_Page_PesquisaDeProduto.Botaofechar(driver).click();
 		
-		Home_Page_PesquisaDeProduto.Senha(driver).sendKeys(Constant.Senha);
+		Home_Page_PesquisaDeProduto.Adicionarlapto(driver).click();
 		
-		Home_Page_PesquisaDeProduto.Botaoenntrar(driver).click();
-		
-		assertEquals(Constant.ProdutoPesquisado,"HP ZBOOK 17 G2 MOBILE WORKSTATION" );
-		
-		driver.getCurrentUrl();
+	//	Home_Page_PesquisaDeProduto.Cordolaptop(driver).click();
 
+	//	Home_Page_PesquisaDeProduto.Selecionandoaocarinho(driver).click();
+
+	//	Home_Page_PesquisaDeProduto.Carinhopop(driver);
+		
+	//	Home_Page_PesquisaDeProduto.Username(driver).sendKeys(ExcelUtils.getCellData(1, 1));
+		
+	//	Home_Page_PesquisaDeProduto.Senha(driver).sendKeys(ExcelUtils.getCellData(1, 2));
+		
+	//	Home_Page_PesquisaDeProduto.Botaoenntrar(driver).click();
+		
+	//	Home_Page_PesquisaDeProduto.Botaonext(driver).click();
+		
+		assertEquals(Constant.ProdutoPesquisado, true);
+		
 	
+		ExcelUtils.setCellData("Pass", 1, 3);
 	}
 
 	// @AfterClass
-	// public static void finaliza() {
+//	 public static void finaliza() {
 	// driver.quit();
 
-//	}
+	//}
 
 }

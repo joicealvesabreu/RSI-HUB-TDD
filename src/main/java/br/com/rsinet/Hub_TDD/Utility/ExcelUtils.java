@@ -10,27 +10,25 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class ExcelUtils {
 
-	private static final XSSFSheet ExcelWSheet = null;
-	@SuppressWarnings("unused")
-	private static XSSFSheet ExcelwSheet;
-	private static XSSFWorkbook ExcelWBook;
-	private static XSSFCell Cell;
-	private static XSSFRow Row;
 
+    private static XSSFSheet ExcelWSheet;
+
+    private static XSSFWorkbook ExcelWBook;
+
+    private static XSSFCell Cell;
+
+    private static XSSFRow Row;
+
+	
 
 	public static void setExcelFile(String Path, String SheetName) throws Exception {
 
 		try {
 
-			
-
 			FileInputStream ExcelFile = new FileInputStream(Path);
 
 			ExcelWBook = new XSSFWorkbook(ExcelFile);
-
-			@SuppressWarnings("unused")
-			XSSFSheet ExternalSheet = ExcelWBook.getSheet(SheetName);
-
+			ExcelWSheet = ExcelWBook.getSheet(SheetName);
 		} catch (Exception e) {
 
 			throw (e);
@@ -38,8 +36,6 @@ public class ExcelUtils {
 		}
 
 	}
-
-
 
 	public static String getCellData(int RowNum, int ColNum) throws Exception {
 
@@ -59,17 +55,15 @@ public class ExcelUtils {
 
 	}
 
-
-
-public static void setCellData(String Result, int RowNum, int ColNum) throws Exception {
+	public static void setCellData(String Result, int RowNum, int ColNum) throws Exception {
 
 		try {
 
-		Row = ExcelWSheet.getRow(RowNum);
+			Row = ExcelWSheet.getRow(RowNum);
 
-		Cell = Row.getCell(ColNum, Row.RETURN_BLANK_AS_NULL);
+			Cell = Row.getCell(ColNum, Row.RETURN_BLANK_AS_NULL);
 
-		if (Cell == null) {
+			if (Cell == null) {
 
 				Cell = Row.createCell(ColNum);
 
@@ -81,14 +75,11 @@ public static void setCellData(String Result, int RowNum, int ColNum) throws Exc
 
 			}
 
-	
+			FileOutputStream fileOut = new FileOutputStream(Constant.Path_TestData + Constant.File_TestData);
 
-		FileOutputStream fileOut = new FileOutputStream(Constant.Path_TestData + Constant.File_TestData);
+			ExcelWBook.write(fileOut);
 
-		ExcelWBook.write(fileOut);
-
-		fileOut.flush();
-
+			fileOut.flush();
 
 		} catch (Exception e) {
 
@@ -96,5 +87,5 @@ public static void setCellData(String Result, int RowNum, int ColNum) throws Exc
 
 		}
 
-	}}
-
+	}
+}

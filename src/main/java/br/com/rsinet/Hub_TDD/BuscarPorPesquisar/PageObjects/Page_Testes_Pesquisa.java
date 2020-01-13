@@ -1,5 +1,7 @@
 package br.com.rsinet.Hub_TDD.BuscarPorPesquisar.PageObjects;
 
+import static org.junit.Assert.*;
+
 import java.util.concurrent.TimeUnit;
 
 import org.junit.AfterClass;
@@ -26,12 +28,12 @@ public class Page_Testes_Pesquisa {
 
 	@Test
 	public void testesbusca() throws Exception {
-		ExcelUtils.setExcelFile(Constant.Path_TestData + Constant.File_TestData, "Sheet1");
-		ExcelUtils.setExcelFile("target/TestDta/BuscarProduto.xlsx", "Plan1");
-
+		ExcelUtils.setExcelFile(Constant.Path_TestData + Constant.File_TestData, "Planilha1");
+		
+	
 		Home_Page_PesquisaDeProduto.Pesquisa(driver).click();
 
-		Home_Page_PesquisaDeProduto.ProdutoPesquisado(driver).sendKeys(Constant.ProdutoPesquisado);
+		Home_Page_PesquisaDeProduto.ProdutoPesquisado(driver).sendKeys(Constant.ProdutoPesquisado); //primiro é linha e depois a coluna
 
 		Home_Page_PesquisaDeProduto.Adicionarlapto(driver);
 
@@ -46,6 +48,8 @@ public class Page_Testes_Pesquisa {
 		Home_Page_PesquisaDeProduto.Senha(driver).sendKeys(Constant.Senha);
 		
 		Home_Page_PesquisaDeProduto.Botaoenntrar(driver).click();
+		
+		assertEquals(Constant.ProdutoPesquisado,"HP ZBOOK 17 G2 MOBILE WORKSTATION" );
 		
 		driver.getCurrentUrl();
 

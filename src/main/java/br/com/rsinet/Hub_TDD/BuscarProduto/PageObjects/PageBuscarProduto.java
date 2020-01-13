@@ -29,10 +29,7 @@ public class PageBuscarProduto {
 	@Test
 	public void Test() throws Exception {
 
-		// ExcelUtils.setExcelFile(Constant.Path_TestData
-		// Constant.File_TestData,"Sheet1");
-
-		// ExcelUtils.setExcelFile("target/TestDta/BuscarProduto.xlsx","Plan1");
+		
 
 		HomePage_Busca.mouse(driver);
 

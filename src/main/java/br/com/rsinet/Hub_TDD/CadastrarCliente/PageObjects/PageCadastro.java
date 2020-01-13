@@ -1,7 +1,9 @@
-package br.com.rsinet.Hub_TDD.CadastrarCliente.framework;
+package br.com.rsinet.Hub_TDD.CadastrarCliente.PageObjects;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+
+import br.com.rsinet.Hub_TDD.CadastrarCliente.PageObjects.HomePage;
 
 import java.util.concurrent.TimeUnit;
 
@@ -9,7 +11,6 @@ import java.util.concurrent.TimeUnit;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import br.com.rsinet.Hub_TDD.CadastrarCliente.HomePage;
 
 
 public class PageCadastro {

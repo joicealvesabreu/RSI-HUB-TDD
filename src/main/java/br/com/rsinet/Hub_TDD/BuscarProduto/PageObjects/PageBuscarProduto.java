@@ -1,8 +1,7 @@
-package br.com.rsinet.Hub_TDD.BuscarProduto.framework;
+package br.com.rsinet.Hub_TDD.BuscarProduto.PageObjects;
 
-import java.awt.AWTException;
-import java.awt.Robot;
-import java.awt.event.InputEvent;
+
+
 import java.util.concurrent.TimeUnit;
 
 import org.junit.AfterClass;
@@ -11,7 +10,9 @@ import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-import br.com.rsinet.Hub_TDD.BuscarProduto.HomePage_Busca;
+
+import br.com.rsinet.Hub_TDD.Utility.Constant;
+
 
 public class PageBuscarProduto {
 	private static WebDriver driver;
@@ -22,26 +23,32 @@ public class PageBuscarProduto {
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		driver.get("https://www.advantageonlineshopping.com/#/");
+		driver.get(Constant.URL);
 	}
 
 	@Test
-	public void Test() throws InterruptedException, AWTException {
-		
+	public void Test() throws Exception {
+
+		// ExcelUtils.setExcelFile(Constant.Path_TestData
+		// Constant.File_TestData,"Sheet1");
+
+		// ExcelUtils.setExcelFile("target/TestDta/BuscarProduto.xlsx","Plan1");
+
 		HomePage_Busca.mouse(driver);
-		
+
 		HomePage_Busca.produto(driver).click();
-		
+
 		HomePage_Busca.cordoproduto(driver).click();
-		
+
 		HomePage_Busca.adicionaraocarinho(driver).click();
-		
+
+		HomePage_Busca.carinhopop(driver).click();
+
 	}
 
 	@AfterClass
 	public static void finalizar() {
-	 driver.quit();
-
+		driver.quit();
 	}
 
 }

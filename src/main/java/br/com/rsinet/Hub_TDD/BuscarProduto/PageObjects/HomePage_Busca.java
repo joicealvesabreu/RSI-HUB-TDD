@@ -1,4 +1,4 @@
-package br.com.rsinet.Hub_TDD.BuscarProduto;
+package br.com.rsinet.Hub_TDD.BuscarProduto.PageObjects;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -13,8 +13,8 @@ public class HomePage_Busca {
 
 	public static WebElement mouse(WebDriver driver) {
 		element = driver.findElement(By.xpath("//div[@id='laptopsImg']"));
-	//	WebDriverWait wait = new WebDriverWait(driver, 10);
-	//	wait.until(ExpectedConditions.elementToBeClickable(element));
+		// WebDriverWait wait = new WebDriverWait(driver, 10);
+		// wait.until(ExpectedConditions.elementToBeClickable(element));
 		JavascriptExecutor ex = (JavascriptExecutor) driver;
 		ex.executeScript("arguments[0].click();", element);
 		return element;
@@ -32,6 +32,15 @@ public class HomePage_Busca {
 
 	public static WebElement cordoproduto(WebDriver driver) {
 		element = driver.findElement(By.name("save_to_cart"));
+		return element;
+	}
+
+	public static WebElement carinhopop(WebDriver driver) {
+		element = driver.findElement(By.id("checkOutPopUp"));
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(element));
+		JavascriptExecutor ex = (JavascriptExecutor) driver;
+		ex.executeScript("arguments[0].click();", element);
 		return element;
 	}
 

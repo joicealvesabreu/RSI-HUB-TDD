@@ -105,7 +105,6 @@ public class HomePage {
 		return element;
 	}
 
-	WebDriverWait wait = new WebDriverWait(driver, 10);
-			wait.until(ExpectedConditions.elementToBeClickable(element));
+	
 
 }

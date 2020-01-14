@@ -16,6 +16,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import br.com.rsinet.Hub_TDD.Utility.Constant;
 import br.com.rsinet.Hub_TDD.Utility.ExcelUtils;
+import junit.framework.Assert;
 
 public class Page_Testes_Pesquisa {
 
@@ -26,44 +27,71 @@ public class Page_Testes_Pesquisa {
 
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		sdriver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		driver.get(Constant.URL);
-		
+
 	}
 
 	@Test
-	public void testesbusca() throws Exception {
-	
-	
-		ExcelUtils.setExcelFile(Constant.Path_TestData + Constant.File_TestData, "Planilha1");//Chamando o Excel
-		
-		Home_Page_PesquisaDeProduto.Pesquisa(driver).click();
+	public void testesbusca_Positivo() throws Exception {
 
-		Home_Page_PesquisaDeProduto.ProdutoPesquisado(driver).sendKeys(ExcelUtils.getCellData(1, 0)+ Keys.ENTER); //primiro é linha e depois a coluna
+		ExcelUtils.setExcelFile(Constant.Path_TestData + Constant.File_TestData, "Planilha1");// Chamando o Excel
+
+		Home_Page_PesquisaDeProduto.Pesquisa(driver).click();
+		
+		
+		
+		Home_Page_PesquisaDeProduto.ProdutoPesquisado(driver).sendKeys(ExcelUtils.getCellData(1, 0) + Keys.ENTER); 
+		
+		boolean achouNome = driver.getPageSource().contains("HP ZBOOK 17 G2 MOBILE WORKSTATION");
 		
 		Home_Page_PesquisaDeProduto.Adicionarlaptop(driver).isSelected();
-		
+
 		Home_Page_PesquisaDeProduto.Confirmandolaptop(driver);
-		
+
 		Home_Page_PesquisaDeProduto.Cordolaptop(driver).click();
 
 		Home_Page_PesquisaDeProduto.Selecionandoaocarinho(driver).click();
 
 		Home_Page_PesquisaDeProduto.Carinhopop(driver);
-		
+
 		Home_Page_PesquisaDeProduto.Username(driver).sendKeys(ExcelUtils.getCellData(1, 1));
-		
+
 		Home_Page_PesquisaDeProduto.Senha(driver).sendKeys(ExcelUtils.getCellData(1, 2));
-		
+
 		Home_Page_PesquisaDeProduto.Botaoenntrar(driver).click();
-		
+
 		Home_Page_PesquisaDeProduto.Botaonext(driver).click();
 		
 		
 		
+		System.out.println("sucesso");
+
+		assertTrue(achouNome);
+		System.out.println(achouNome);
+		
+	}
+		
+		@Test
+		public void testesbusca_Negativo() throws Exception {
+			
+			ExcelUtils.setExcelFile(Constant.Path_TestData + Constant.File_TestData, "Planilha1");// Chamando o Excel
+
+			Home_Page_PesquisaDeProduto.Pesquisa(driver).click();
+			
+			Home_Page_PesquisaDeProduto.ProdutoPesquisado(driver).sendKeys(ExcelUtils.getCellData(1, 0) + Keys.ENTER); 
+			
+			@SuppressWarnings("unused")
+			
+			boolean achouprodutoerrado = driver.getPageSource().contains("HP ZEN BOOK");
+			assertFalse(achouprodutoerrado);
+			
+		}
 	
-		ExcelUtils.setCellData("Pass", 1, 3);
+	@AfterClass
+	public static void closeBrowser() {
+		driver.quit();
+
 	}
 
-	
 }

@@ -1,4 +1,4 @@
-package br.com.rsinet.Hub_TDD.BuscarPorPesquisar.PageObjects;
+package br.com.rsinet.Hub_TDD.PageObjects.Tests;
 
 import static org.junit.Assert.*;
 
@@ -14,8 +14,10 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import br.com.rsinet.Hub_TDD.PageObjects.Home_Page_PesquisaDeProduto;
 import br.com.rsinet.Hub_TDD.Utility.Constant;
 import br.com.rsinet.Hub_TDD.Utility.ExcelUtils;
+import br.com.rsinet.Hub_TDD.Utility.Utility;
 import junit.framework.Assert;
 
 public class Page_Testes_Pesquisa {
@@ -23,11 +25,11 @@ public class Page_Testes_Pesquisa {
 	private static WebDriver driver;
 
 	@BeforeClass
-	public static void inicio() {
+	public static void inicia() {
 
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
-		sdriver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		driver.get(Constant.URL);
 
 	}
@@ -36,10 +38,10 @@ public class Page_Testes_Pesquisa {
 	public void testesbusca_Positivo() throws Exception {
 
 		ExcelUtils.setExcelFile(Constant.Path_TestData + Constant.File_TestData, "Planilha1");// Chamando o Excel
+		
+		Utility.captureScreenshot(driver, "Cadastro");
 
 		Home_Page_PesquisaDeProduto.Pesquisa(driver).click();
-		
-		
 		
 		Home_Page_PesquisaDeProduto.ProdutoPesquisado(driver).sendKeys(ExcelUtils.getCellData(1, 0) + Keys.ENTER); 
 		
@@ -54,7 +56,7 @@ public class Page_Testes_Pesquisa {
 		Home_Page_PesquisaDeProduto.Selecionandoaocarinho(driver).click();
 
 		Home_Page_PesquisaDeProduto.Carinhopop(driver);
-
+		
 		Home_Page_PesquisaDeProduto.Username(driver).sendKeys(ExcelUtils.getCellData(1, 1));
 
 		Home_Page_PesquisaDeProduto.Senha(driver).sendKeys(ExcelUtils.getCellData(1, 2));
@@ -63,10 +65,9 @@ public class Page_Testes_Pesquisa {
 
 		Home_Page_PesquisaDeProduto.Botaonext(driver).click();
 		
+		Utility.captureScreenshot(driver, "Cadastro");
 		
 		
-		System.out.println("sucesso");
-
 		assertTrue(achouNome);
 		System.out.println(achouNome);
 		
@@ -81,10 +82,12 @@ public class Page_Testes_Pesquisa {
 			
 			Home_Page_PesquisaDeProduto.ProdutoPesquisado(driver).sendKeys(ExcelUtils.getCellData(1, 0) + Keys.ENTER); 
 			
-			@SuppressWarnings("unused")
-			
 			boolean achouprodutoerrado = driver.getPageSource().contains("HP ZEN BOOK");
+			
+			Utility.captureScreenshot(driver, "Cadastronegatigo"); // chamando o comando de print 
+			
 			assertFalse(achouprodutoerrado);
+			System.out.println(achouprodutoerrado);
 			
 		}
 	

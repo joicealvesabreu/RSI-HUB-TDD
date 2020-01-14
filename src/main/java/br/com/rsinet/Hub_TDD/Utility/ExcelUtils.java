@@ -10,27 +10,22 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class ExcelUtils {
 
+	private static XSSFSheet ExcelWSheet;
 
-    private static XSSFSheet ExcelWSheet;
+	private static XSSFWorkbook ExcelWBook;
 
-    private static XSSFWorkbook ExcelWBook;
+	private static XSSFCell Cell;
 
-    private static XSSFCell Cell;
-
-    private static XSSFRow Row;
-
-	
+	private static XSSFRow Row;
 
 	public static void setExcelFile(String Path, String SheetName) throws Exception {
 
 		try {
 
 			FileInputStream ExcelFile = new FileInputStream(Path);
-
 			ExcelWBook = new XSSFWorkbook(ExcelFile);
 			ExcelWSheet = ExcelWBook.getSheet(SheetName);
 		} catch (Exception e) {
-
 			throw (e);
 
 		}

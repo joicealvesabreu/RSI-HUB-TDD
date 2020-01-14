@@ -1,4 +1,4 @@
-package br.com.rsinet.Hub_TDD.BuscarPorPesquisar.PageObjects;
+package br.com.rsinet.Hub_TDD.PageObjects;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;

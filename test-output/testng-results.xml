@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="34553" started-at="2020-01-15T18:56:35Z" finished-at="2020-01-15T18:57:10Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="34553" started-at="2020-01-15T18:56:35Z" finished-at="2020-01-15T18:57:10Z">
+      <class name="br.com.rsinet.Hub_TDD.PageObjects.Tests.Page_Testes_Pesquisa">
+        <test-method status="PASS" signature="inicia()[pri:0, instance:br.com.rsinet.Hub_TDD.PageObjects.Tests.Page_Testes_Pesquisa@53b32d7]" name="inicia" is-config="true" duration-ms="11478" started-at="2020-01-15T18:56:35Z" finished-at="2020-01-15T18:56:47Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- inicia -->
+        <test-method status="PASS" signature="testesbusca_Negativo()[pri:0, instance:br.com.rsinet.Hub_TDD.PageObjects.Tests.Page_Testes_Pesquisa@53b32d7]" name="testesbusca_Negativo" duration-ms="1947" started-at="2020-01-15T18:56:47Z" finished-at="2020-01-15T18:56:48Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testesbusca_Negativo -->
+        <test-method status="PASS" signature="finalizar()[pri:0, instance:br.com.rsinet.Hub_TDD.PageObjects.Tests.Page_Testes_Pesquisa@53b32d7]" name="finalizar" is-config="true" duration-ms="669" started-at="2020-01-15T18:56:48Z" finished-at="2020-01-15T18:56:49Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- finalizar -->
+        <test-method status="PASS" signature="inicia()[pri:0, instance:br.com.rsinet.Hub_TDD.PageObjects.Tests.Page_Testes_Pesquisa@53b32d7]" name="inicia" is-config="true" duration-ms="10290" started-at="2020-01-15T18:56:49Z" finished-at="2020-01-15T18:56:59Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- inicia -->
+        <test-method status="PASS" signature="testesbusca_Positivo()[pri:0, instance:br.com.rsinet.Hub_TDD.PageObjects.Tests.Page_Testes_Pesquisa@53b32d7]" name="testesbusca_Positivo" duration-ms="9470" started-at="2020-01-15T18:56:59Z" finished-at="2020-01-15T18:57:09Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testesbusca_Positivo -->
+        <test-method status="PASS" signature="finalizar()[pri:0, instance:br.com.rsinet.Hub_TDD.PageObjects.Tests.Page_Testes_Pesquisa@53b32d7]" name="finalizar" is-config="true" duration-ms="674" started-at="2020-01-15T18:57:09Z" finished-at="2020-01-15T18:57:10Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- finalizar -->
+      </class> <!-- br.com.rsinet.Hub_TDD.PageObjects.Tests.Page_Testes_Pesquisa -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

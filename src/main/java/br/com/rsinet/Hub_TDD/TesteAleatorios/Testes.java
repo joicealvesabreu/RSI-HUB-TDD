@@ -59,6 +59,15 @@ public class Testes {
 			
 			logger.fail(result.getThrowable().getMessage(), MediaEntityBuilder.createScreenCaptureFromPath(temp).build());
 		}
+else if{
+	if(result.getStatus()==ITestResult.SUCCESS)
+		{
+			String temp=Utility.getScreenshot(driver);
+			
+			logger.pass("Testes realizado com sucesso", MediaEntityBuilder.createScreenCaptureFromBase64String(temp).build());
+	
+}
+		
 		
 		extent.flush();
 		driver.quit();

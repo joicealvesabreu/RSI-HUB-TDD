@@ -20,6 +20,7 @@ import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
 import br.com.rsinet.Hub_TDD.PageObjects.Home_Page_PesquisaDeProduto;
+import br.com.rsinet.Hub_TDD.PageObjects.Page_WebDriver;
 import br.com.rsinet.Hub_TDD.Utility.Constant;
 import br.com.rsinet.Hub_TDD.Utility.ExcelUtils;
 import br.com.rsinet.Hub_TDD.Utility.Utility;
@@ -27,23 +28,18 @@ import br.com.rsinet.Hub_TDD.Utility.Utility;
 public class Page_Testes_Pesquisa extends Utility{
 
 	private static WebDriver driver;
-	static ExtentReports extent;
-	static ExtentTest logger;
-	static ExtentHtmlReporter reporter;
+	private static ExtentReports extent;
+	private static ExtentTest logger;
+	private static ExtentHtmlReporter reporter;
 
 	@BeforeMethod
 	public static void inicia() {
-		ExtentHtmlReporter reporter = new ExtentHtmlReporter("./Reports/PesquisadaLupa.html");
+		ExtentHtmlReporter reporter = new ExtentHtmlReporter("./Relatorios/Pesquisamassadedados.html");
 
 		extent = new ExtentReports();
 		extent.attachReporter(reporter);
 		logger = extent.createTest("LoginTest");
-
-		driver = new ChromeDriver();
-		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		driver.get(Constant.URL);
-
+		driver = Page_WebDriver.InicializaDriver(driver);
 	}
 
 	@Test
@@ -111,6 +107,6 @@ public class Page_Testes_Pesquisa extends Utility{
 			logger.pass("Sucesso", MediaEntityBuilder.createScreenCaptureFromPath(temp).build());
 		}
 		extent.flush();
-		driver.quit();
+		driver.close();
 	}
 }

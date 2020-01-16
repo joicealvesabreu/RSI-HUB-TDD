@@ -2,16 +2,22 @@ package br.com.rsinet.Hub_TDD.PageObjects.Tests;
 
 
 
+import java.io.IOException;
 import java.util.concurrent.TimeUnit;
-
 
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.MediaEntityBuilder;
+import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
 import br.com.rsinet.Hub_TDD.PageObjects.Home_Page_PesquisaDeProduto;
 import br.com.rsinet.Hub_TDD.Utility.Constant;
@@ -21,11 +27,18 @@ import br.com.rsinet.Hub_TDD.Utility.Utility;
 public class Page_Testes_Pesquisa extends Utility{
 
 	private static WebDriver driver;
+	static ExtentReports extent;
+	static ExtentTest logger;
+	static ExtentHtmlReporter reporter;
 
 	@BeforeMethod
-	public static  void inicia() {
+	public static void inicia() {
+		ExtentHtmlReporter reporter = new ExtentHtmlReporter("./Reports/PesquisadaLupa.html");
 
-		
+		extent = new ExtentReports();
+		extent.attachReporter(reporter);
+		logger = extent.createTest("LoginTest");
+
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -71,14 +84,13 @@ public class Page_Testes_Pesquisa extends Utility{
 	public void testesbusca_Negativo() throws Exception {
 
 		ExcelUtils.setExcelFile(Constant.Path_TestData + Constant.File_TestData, "Planilha1");// Chamando o Excel
-		
 
 		Home_Page_PesquisaDeProduto.Pesquisa(driver).click();
 
 		Home_Page_PesquisaDeProduto.ProdutoPesquisado(driver).sendKeys(ExcelUtils.getCellData(1, 0) + Keys.ENTER);
 
 		boolean achouprodutoerrado = driver.getPageSource().contains("HP ZEN BOOK");
-		
+
 		Utility.getScreenshot(driver);
 
 		Assert.assertFalse(achouprodutoerrado);
@@ -87,10 +99,18 @@ public class Page_Testes_Pesquisa extends Utility{
 	}
 
 	@AfterMethod
-	public static  void finalizar()  {
-	
+	public static void finalizar(ITestResult result) throws IOException {
+		if (result.getStatus() == ITestResult.FAILURE) {
+			String temp = Utility.getScreenshot(driver);
+
+			logger.fail(result.getThrowable().getMessage(),
+					MediaEntityBuilder.createScreenCaptureFromPath(temp).build());
+		} else if (result.getStatus() == ITestResult.SUCCESS) {
+			String temp = Utility.getScreenshot(driver);
+
+			logger.pass("Sucesso", MediaEntityBuilder.createScreenCaptureFromPath(temp).build());
+		}
+		extent.flush();
 		driver.quit();
-
 	}
-
 }

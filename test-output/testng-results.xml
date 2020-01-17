@@ -1,39 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" ignored="0" total="2" passed="1">
-  <reporter-output>
-  </reporter-output>
-  <suite name="Default suite" duration-ms="30956" started-at="2020-01-16T20:51:45Z" finished-at="2020-01-16T20:52:16Z">
-    <groups>
-    </groups>
-    <test name="Default test" duration-ms="30956" started-at="2020-01-16T20:51:45Z" finished-at="2020-01-16T20:52:16Z">
-      <class name="br.com.rsinet.Hub_TDD.PageObjects.Tests.PageTestDe_Buscar">
-        <test-method status="PASS" signature="inicia()[pri:0, instance:br.com.rsinet.Hub_TDD.PageObjects.Tests.PageTestDe_Buscar@6093dd95]" name="inicia" is-config="true" duration-ms="13981" started-at="2020-01-16T20:51:45Z" finished-at="2020-01-16T20:51:59Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- inicia -->
-        <test-method status="FAIL" signature="TestBuscar_Positivo()[pri:0, instance:br.com.rsinet.Hub_TDD.PageObjects.Tests.PageTestDe_Buscar@6093dd95]" name="TestBuscar_Positivo" duration-ms="16243" started-at="2020-01-16T20:51:59Z" finished-at="2020-01-16T20:52:16Z">
-          <exception class="org.openqa.selenium.NoSuchElementException">
-            <message>
-              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id="searchPage"]/div[3]/div/div/div[2]/ul/li/div[2]/label"}
+<testng-results skipped="0" failed="1" ignored="0"
+	total="1" passed="0">
+	<reporter-output>
+	</reporter-output>
+	<suite name="Default suite" duration-ms="28512"
+		started-at="2020-01-17T15:10:52Z" finished-at="2020-01-17T15:11:20Z">
+		<groups>
+		</groups>
+		<test name="Default test" duration-ms="28512"
+			started-at="2020-01-17T15:10:52Z" finished-at="2020-01-17T15:11:20Z">
+			<class
+				name="br.com.rsinet.Hub_TDD.PageObjects.Tests.PageTestDe_Buscar">
+				<test-method status="PASS"
+					signature="inicia()[pri:0, instance:br.com.rsinet.Hub_TDD.PageObjects.Tests.PageTestDe_Buscar@6093dd95]"
+					name="inicia" is-config="true" duration-ms="11457"
+					started-at="2020-01-17T15:10:52Z"
+					finished-at="2020-01-17T15:11:03Z">
+					<reporter-output>
+					</reporter-output>
+				</test-method> <!-- inicia -->
+				<test-method status="FAIL"
+					signature="TestBuscar_Positivo()[pri:0, instance:br.com.rsinet.Hub_TDD.PageObjects.Tests.PageTestDe_Buscar@6093dd95]"
+					name="TestBuscar_Positivo" duration-ms="17021"
+					started-at="2020-01-17T15:11:03Z"
+					finished-at="2020-01-17T15:11:20Z">
+					<exception
+						class="org.openqa.selenium.NoSuchElementException">
+						<message>
+              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//div[@class='cell categoryRight']//li[@class='ng-scope']"}
   (Session info: chrome=79.0.3945.130)
 For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'RSI1535', ip: '10.0.75.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_231'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 79.0.3945.130, chrome: {chromedriverVersion: 79.0.3945.36 (3582db32b3389..., userDataDir: C:\Users\JOICE~1.ABR\AppDat...}, goog:chromeOptions: {debuggerAddress: localhost:51035}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: 133d73b6ffb7e8cd7e6009e8fdfb095b
-*** Element info: {Using=xpath, value=//*[@id="searchPage"]/div[3]/div/div/div[2]/ul/li/div[2]/label}]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id="searchPage"]/div[3]/div/div/div[2]/ul/li/div[2]/label"}
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 79.0.3945.130, chrome: {chromedriverVersion: 79.0.3945.36 (3582db32b3389..., userDataDir: C:\Users\JOICE~1.ABR\AppDat...}, goog:chromeOptions: {debuggerAddress: localhost:52394}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: e56c4cac2f26d4f2fe83b03374a4421a
+*** Element info: {Using=xpath, value=//div[@class='cell categoryRight']//li[@class='ng-scope']}]]>
+						</message>
+						<full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//div[@class='cell categoryRight']//li[@class='ng-scope']"}
   (Session info: chrome=79.0.3945.130)
 For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'RSI1535', ip: '10.0.75.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_231'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 79.0.3945.130, chrome: {chromedriverVersion: 79.0.3945.36 (3582db32b3389..., userDataDir: C:\Users\JOICE~1.ABR\AppDat...}, goog:chromeOptions: {debuggerAddress: localhost:51035}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: 133d73b6ffb7e8cd7e6009e8fdfb095b
-*** Element info: {Using=xpath, value=//*[@id="searchPage"]/div[3]/div/div/div[2]/ul/li/div[2]/label}
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 79.0.3945.130, chrome: {chromedriverVersion: 79.0.3945.36 (3582db32b3389..., userDataDir: C:\Users\JOICE~1.ABR\AppDat...}, goog:chromeOptions: {debuggerAddress: localhost:52394}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: e56c4cac2f26d4f2fe83b03374a4421a
+*** Element info: {Using=xpath, value=//div[@class='cell categoryRight']//li[@class='ng-scope']}
 at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
 at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -48,8 +61,8 @@ at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:3
 at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
 at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
 at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-at br.com.rsinet.Hub_TDD.PageObjects.Home_Page_PesquisaDeProduto.Confirmandolaptop(Home_Page_PesquisaDeProduto.java:38)
-at br.com.rsinet.Hub_TDD.PageObjects.Tests.PageTestDe_Buscar.TestBuscar_Positivo(PageTestDe_Buscar.java:55)
+at br.com.rsinet.Hub_TDD.PageObjects.HomePage_Buscar.Adicionarlaptop(HomePage_Buscar.java:41)
+at br.com.rsinet.Hub_TDD.PageObjects.Tests.PageTestDe_Buscar.TestBuscar_Positivo(PageTestDe_Buscar.java:59)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -76,20 +89,12 @@ at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TestBuscar_Positivo -->
-        <test-method status="PASS" signature="inicia()[pri:0, instance:br.com.rsinet.Hub_TDD.PageObjects.Tests.PageTestDe_Buscar@6093dd95]" name="inicia" is-config="true" duration-ms="247" started-at="2020-01-16T20:52:16Z" finished-at="2020-01-16T20:52:16Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- inicia -->
-        <test-method status="PASS" signature="Test_Negativo()[pri:0, instance:br.com.rsinet.Hub_TDD.PageObjects.Tests.PageTestDe_Buscar@6093dd95]" name="Test_Negativo" duration-ms="431" started-at="2020-01-16T20:52:16Z" finished-at="2020-01-16T20:52:16Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Test_Negativo -->
-      </class> <!-- br.com.rsinet.Hub_TDD.PageObjects.Tests.PageTestDe_Buscar -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+						</full-stacktrace>
+					</exception> <!-- org.openqa.selenium.NoSuchElementException -->
+					<reporter-output>
+					</reporter-output>
+				</test-method> <!-- TestBuscar_Positivo -->
+			</class> <!-- br.com.rsinet.Hub_TDD.PageObjects.Tests.PageTestDe_Buscar -->
+		</test> <!-- Default test -->
+	</suite> <!-- Default suite -->
 </testng-results>

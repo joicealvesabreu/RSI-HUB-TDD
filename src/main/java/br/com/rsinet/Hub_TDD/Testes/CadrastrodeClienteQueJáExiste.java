@@ -1,52 +1,60 @@
-package br.com.rsinet.Hub_TDD.Testes.Positivos;
-
-import java.io.IOException;
-import java.util.concurrent.TimeUnit;
+package br.com.rsinet.Hub_TDD.Testes;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
-import com.aventstack.extentreports.MediaEntityBuilder;
+
+import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
 import br.com.rsinet.Hub_TDD.PageObjects.Home_CadastrodeUsuario;
 import br.com.rsinet.Hub_TDD.PageObjects.Home_ChromeDriver;
-import br.com.rsinet.Hub_TDD.Utility.Constant;
+
 import br.com.rsinet.Hub_TDD.Utility.Utility;
 
 public class CadrastrodeClienteQueJ·Existe {
 
 	static WebDriver driver;
 	static ExtentReports extent;
-	static ExtentTest logger;
+	static ExtentTest logger, logger1;
 	static ExtentHtmlReporter reporter;
 
-	@BeforeMethod
-	public void testes() {
+	@BeforeClass
+	public static void InicializaReport() {
 
-		ExtentHtmlReporter reporter = new ExtentHtmlReporter("./Relatorios/Cadastro56.html");
-
+		ExtentHtmlReporter reporter = new ExtentHtmlReporter("./Relatorios/Cadastros.html");
 		extent = new ExtentReports();
 		extent.attachReporter(reporter);
-		logger = extent.createTest("LoginTest");
-		driver=Home_ChromeDriver.InicializaDriver();
+
 	}
-	
-	@org.testng.annotations.Test
+
+	@BeforeMethod
+	public static void InicializaBrowser() {
+
+		driver = Home_ChromeDriver.InicializaDriver();
+	}
+
+	@Test
 	public void cadastro_realizado_com_sucesso() throws InterruptedException {
+
+		logger = extent.createTest("Cadastrocomsucesso");
 
 		Home_CadastrodeUsuario.clicarmenu(driver).click();
 		Home_CadastrodeUsuario.clicarCadastrar(driver).click();
 
-		Home_CadastrodeUsuario.nomeUsuario(driver).sendKeys("JoiceCarva");
+		Home_CadastrodeUsuario.nomeUsuario(driver).sendKeys("JoiceEguilherme");
 		Home_CadastrodeUsuario.emailUsuario(driver).sendKeys("joice_natalice16@hotmail.com");
 		Home_CadastrodeUsuario.senhaUsuario(driver).sendKeys("Natalice22");
 		Home_CadastrodeUsuario.confirmasenhaUsuario(driver).sendKeys("Natalice22");
@@ -65,16 +73,23 @@ public class CadrastrodeClienteQueJ·Existe {
 		Home_CadastrodeUsuario.aceitatermos2(driver).click();
 		Home_CadastrodeUsuario.registraUsuario(driver).click();
 
-		Thread.sleep(10000); // Tive que Colocar esse Thread pois sÛ ele funcionou
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"menuUserLink\"]/span"))).getText();
 
-		String cadastrorealizadocomsucesso = driver.findElement(By.xpath("//*[@id=\"menuUserLink\"]/span")).getText();
-		Assert.assertTrue(cadastrorealizadocomsucesso.contains("JoiceCarva"), "JoiceCarva");
+		Assert.assertTrue(driver.getPageSource().contains("JoiceEguilherme"));
 		Utility.getScreenshot(driver);
+		System.out.println(wait);
+
+		logger.log(Status.INFO, "Cadrastrou Certo");
+		logger.log(Status.PASS, "Usuario Logado");
+		extent.flush();
 
 	}
 
-	@org.testng.annotations.Test
+	@Test
 	public void cadastrojaExistente() {
+
+		logger1 = extent.createTest("JaExisteCadastro");
 
 		Home_CadastrodeUsuario.clicarmenu(driver).click();
 		Home_CadastrodeUsuario.clicarCadastrar(driver).click();
@@ -100,30 +115,21 @@ public class CadrastrodeClienteQueJ·Existe {
 
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("javascript:window.scrollBy(0,200)");
-
 		js.executeAsyncScript("window.setTimeout(arguments[arguments.length - 1], 2000);");
 
-		String cadastrorealizadocomsucesso = driver
+		Utility.getScreenshot(driver);
+		String cadastrojaexiste = driver
 				.findElement(By.xpath("//*[@id=\"registerPage\"]/article/sec-form/div[2]/label[1]")).getText();
-		Assert.assertTrue(cadastrorealizadocomsucesso.contains("User name already exists"), "User name already exists");
-		System.out.println("User name already exists" + cadastrorealizadocomsucesso);
+		Assert.assertTrue(cadastrojaexiste.contains("User name already exists"), "User name already exists");
+		System.out.println("User name already exists" + cadastrojaexiste);
 
+		logger1.log(Status.INFO, "O cadastro j· existe");
+		logger1.log(Status.PASS, "J· Existe");
+		extent.flush();
 	}
 
 	@AfterMethod
-	public void Finaliza(ITestResult result) throws IOException {
-
-		if (result.getStatus() == ITestResult.FAILURE) {
-			String temp = Utility.getScreenshot(driver);
-
-			logger.fail(result.getThrowable().getMessage(),
-					MediaEntityBuilder.createScreenCaptureFromPath(temp).build());
-		} else if (result.getStatus() == ITestResult.SUCCESS) {
-			String temp = Utility.getScreenshot(driver);
-			logger.pass("Sucesso", MediaEntityBuilder.createScreenCaptureFromPath(temp).build());
-		}
-		extent.flush();
+	public void Finaliza(ITestResult result) {
 		Home_ChromeDriver.FechandoDriver(driver);
-
 	}
 }

@@ -1,20 +1,19 @@
-package br.com.rsinet.Hub_TDD.Testes.Positivos;
+package br.com.rsinet.Hub_TDD.Testes;
 
 import java.io.IOException;
-import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
-
 import org.testng.Assert;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
-import com.aventstack.extentreports.MediaEntityBuilder;
+import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
 import br.com.rsinet.Hub_TDD.PageObjects.Home_BuscadeProduto_BarradePesquisa;
@@ -30,19 +29,30 @@ public class Buscar_Produto_Por_Barra_de_Pesquisa {
 	private static ExtentTest logger;
 	private static ExtentHtmlReporter reporter;
 
-	@BeforeMethod
+	@BeforeClass
 	public static void inicia() {
-		ExtentHtmlReporter reporter = new ExtentHtmlReporter("./Relatorios/Pesquisamassadedados.html");
+		
+	ExtentHtmlReporter reporter = new ExtentHtmlReporter("./Relatorios/PesquisaPorMassaDeDados.html");
 
 		extent = new ExtentReports();
 		extent.attachReporter(reporter);
-		logger = extent.createTest("LoginTest");
+		
+
+	}
+	
+	@BeforeMethod
+	public static void InicializaBrowser(){
+		
 		driver = Home_ChromeDriver.InicializaDriver();
 	}
+	
 
 	@Test
-	public void testesbusca_Positivo() throws Exception {
+	public void BuscardeProduto() throws Exception {
+		
 
+		logger = extent.createTest("BuscardeprodutoCerto");
+		
 		ExcelUtils.setExcelFile(Constant.Path_TestData + Constant.File_TestData, "Planilha1");// Chamando o Excel
 
 		Home_BuscadeProduto_BarradePesquisa.Pesquisa(driver).click();
@@ -69,14 +79,19 @@ public class Buscar_Produto_Por_Barra_de_Pesquisa {
 
 		Home_BuscadeProduto_BarradePesquisa.Botaonext(driver).click();
 
+			logger.log(Status.INFO,"Buscar o produto do excel");
+			logger.log(Status.PASS, "Sucesso");
+		
 		Assert.assertTrue(achouNome);
 		System.out.println(achouNome);
-
+		extent.flush();
 	}
 
 	@Test
 	public void testesbusca_Negativo() throws Exception {
 
+		ExtentTest logger1 = extent.createTest("BuscardeprodutoErrado");
+		
 		ExcelUtils.setExcelFile(Constant.Path_TestData + Constant.File_TestData, "Planilha1");// Chamando o Excel
 
 		Home_BuscadeProduto_BarradePesquisa.Pesquisa(driver).click();
@@ -86,25 +101,20 @@ public class Buscar_Produto_Por_Barra_de_Pesquisa {
 		boolean achouprodutoerrado = driver.getPageSource().contains("HP ZEN BOOK");
 
 		Utility.getScreenshot(driver);
+		
+		logger1.log(Status.INFO,"Buscar o produto Errado");
+		logger1.log(Status.PASS, "nao Encontrou");
 
 		Assert.assertFalse(achouprodutoerrado);
 		System.out.println(achouprodutoerrado);
-
+		extent.flush();
+	
 	}
 
+	
 	@AfterMethod
 	public static void finalizar(ITestResult result) throws IOException {
-		if (result.getStatus() == ITestResult.FAILURE) {
-			String temp = Utility.getScreenshot(driver);
-
-		logger.fail(result.getThrowable().getMessage(),
-				MediaEntityBuilder.createScreenCaptureFromPath(temp).build());
-		} else if (result.getStatus() == ITestResult.SUCCESS) {
-			String temp = Utility.getScreenshot(driver);
-
-			logger.pass("Sucesso", MediaEntityBuilder.createScreenCaptureFromPath(temp).build());
-		}
-		extent.flush();
+		
 	Home_ChromeDriver.FechandoDriver(driver);
 	}
 }

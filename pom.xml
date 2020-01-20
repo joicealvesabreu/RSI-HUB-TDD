@@ -48,6 +48,7 @@
 			<version>3.10-FINAL</version>
 		</dependency>
 
+		<!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
 		<dependency>
 			<groupId>com.aventstack</groupId>
 			<artifactId>extentreports</artifactId>

@@ -3,7 +3,6 @@ package br.com.rsinet.Hub_TDD.Testes;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
-
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -15,21 +14,21 @@ import org.testng.annotations.Test;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
-
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
 import br.com.rsinet.Hub_TDD.PageObjects.Home_CadastrodeUsuario;
 import br.com.rsinet.Hub_TDD.PageObjects.Home_ChromeDriver;
-
+import br.com.rsinet.Hub_TDD.Utility.ExcelUtils;
 import br.com.rsinet.Hub_TDD.Utility.Utility;
 
-public class CadrastrodeClienteQueJ·Existe {
+public class Cadrastro_De_Usuario {
 
 	static WebDriver driver;
 	static ExtentReports extent;
 	static ExtentTest logger, logger1;
 	static ExtentHtmlReporter reporter;
+
 
 	@BeforeClass
 	public static void InicializaReport() {
@@ -47,27 +46,40 @@ public class CadrastrodeClienteQueJ·Existe {
 	}
 
 	@Test
-	public void cadastro_realizado_com_sucesso() throws InterruptedException {
+	public void cadastro_realizado_com_sucesso() throws Exception {
+
+		String sNome =ExcelUtils.getCellData(1, 0);
+		String sEmail = ExcelUtils.getCellData(1, 1);
+		String sSenha = ExcelUtils.getCellData(1, 2);
+		String sPrimeironome = ExcelUtils.getCellData(1, 3);
+		String sUltimonome = ExcelUtils.getCellData(1, 4);
+		String sTelefone = ExcelUtils.getCellData(1, 5);
+		String sCidade = ExcelUtils.getCellData(1, 6);
+		String sPais = ExcelUtils.getCellData(1, 7);
+		String sEndereco = ExcelUtils.getCellData(1, 8);
+		String sEstado = ExcelUtils.getCellData(1, 9);
+		String sCep = ExcelUtils.getCellData(1, 10);
 
 		logger = extent.createTest("Cadastrocomsucesso");
 
 		Home_CadastrodeUsuario.clicarmenu(driver).click();
 		Home_CadastrodeUsuario.clicarCadastrar(driver).click();
 
-		Home_CadastrodeUsuario.nomeUsuario(driver).sendKeys("JoiceEguilherme");
-		Home_CadastrodeUsuario.emailUsuario(driver).sendKeys("joice_natalice16@hotmail.com");
-		Home_CadastrodeUsuario.senhaUsuario(driver).sendKeys("Natalice22");
-		Home_CadastrodeUsuario.confirmasenhaUsuario(driver).sendKeys("Natalice22");
+		Home_CadastrodeUsuario.nomeUsuario(driver).sendKeys(sNome);
+		Home_CadastrodeUsuario.emailUsuario(driver).sendKeys(sEmail);
+		Home_CadastrodeUsuario.senhaUsuario(driver).sendKeys(sSenha);
+		Home_CadastrodeUsuario.confirmasenhaUsuario(driver).sendKeys(sSenha);
+		
 
-		Home_CadastrodeUsuario.primeiroNome(driver).sendKeys("joice");
-		Home_CadastrodeUsuario.ultimoNome(driver).sendKeys("abreu");
-		Home_CadastrodeUsuario.telefoneUsuario(driver).sendKeys("11941707376");
+		Home_CadastrodeUsuario.primeiroNome(driver).sendKeys(sPrimeironome);
+		Home_CadastrodeUsuario.ultimoNome(driver).sendKeys(sUltimonome);
+		Home_CadastrodeUsuario.telefoneUsuario(driver).sendKeys(sTelefone);
 		Home_CadastrodeUsuario.paisUsuario(driver);
 
-		Home_CadastrodeUsuario.cidadeUsuario(driver).sendKeys("Taboao da Serra");
-		Home_CadastrodeUsuario.enderecoUsuario(driver).sendKeys("Rua Albano Leite");
-		Home_CadastrodeUsuario.estadoUsuario(driver).sendKeys("Sao Paulo");
-		Home_CadastrodeUsuario.cepUsuario(driver).sendKeys("06773-050");
+		Home_CadastrodeUsuario.cidadeUsuario(driver).sendKeys(sCidade);
+		Home_CadastrodeUsuario.enderecoUsuario(driver).sendKeys(sEndereco);
+		Home_CadastrodeUsuario.estadoUsuario(driver).sendKeys(sEstado);
+		Home_CadastrodeUsuario.cepUsuario(driver).sendKeys(sCep);
 
 		Home_CadastrodeUsuario.aceitaTermos(driver).isSelected();
 		Home_CadastrodeUsuario.aceitatermos2(driver).click();
@@ -76,7 +88,7 @@ public class CadrastrodeClienteQueJ·Existe {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"menuUserLink\"]/span"))).getText();
 
-		Assert.assertTrue(driver.getPageSource().contains("JoiceEguilherme"));
+		Assert.assertTrue(driver.getPageSource().contains(sNome));
 		Utility.getScreenshot(driver);
 		System.out.println(wait);
 
@@ -87,27 +99,39 @@ public class CadrastrodeClienteQueJ·Existe {
 	}
 
 	@Test
-	public void cadastrojaExistente() {
+	public void cadastrojaExistente() throws Exception {
 
 		logger1 = extent.createTest("JaExisteCadastro");
+		String sNome =ExcelUtils.getCellData(1, 0);
+		String sEmail = ExcelUtils.getCellData(1, 1);
+		String sSenha = ExcelUtils.getCellData(1, 2);
+		String sPrimeironome = ExcelUtils.getCellData(1, 3);
+		String sUltimonome = ExcelUtils.getCellData(1, 4);
+		String sTelefone = ExcelUtils.getCellData(1, 5);
+		String sCidade = ExcelUtils.getCellData(1, 6);
+		String sPais = ExcelUtils.getCellData(1, 7);
+		String sEndereco = ExcelUtils.getCellData(1, 8);
+		String sEstado = ExcelUtils.getCellData(1, 9);
+		String sCep = ExcelUtils.getCellData(1, 10);
+
 
 		Home_CadastrodeUsuario.clicarmenu(driver).click();
 		Home_CadastrodeUsuario.clicarCadastrar(driver).click();
 
-		Home_CadastrodeUsuario.nomeUsuario(driver).sendKeys("JoiceNatalice");
-		Home_CadastrodeUsuario.emailUsuario(driver).sendKeys("joice_natalice16@hotmail.com");
-		Home_CadastrodeUsuario.senhaUsuario(driver).sendKeys("Natalice24");
-		Home_CadastrodeUsuario.confirmasenhaUsuario(driver).sendKeys("Natalice24");
+		Home_CadastrodeUsuario.nomeUsuario(driver).sendKeys(sNome);
+		Home_CadastrodeUsuario.emailUsuario(driver).sendKeys(sEmail);
+		Home_CadastrodeUsuario.senhaUsuario(driver).sendKeys(sSenha);
+		Home_CadastrodeUsuario.confirmasenhaUsuario(driver).sendKeys(sSenha);
 
-		Home_CadastrodeUsuario.primeiroNome(driver).sendKeys("joice");
-		Home_CadastrodeUsuario.ultimoNome(driver).sendKeys("abreu");
-		Home_CadastrodeUsuario.telefoneUsuario(driver).sendKeys("11941707376");
+		Home_CadastrodeUsuario.primeiroNome(driver).sendKeys(sPrimeironome);
+		Home_CadastrodeUsuario.ultimoNome(driver).sendKeys(sUltimonome);
+		Home_CadastrodeUsuario.telefoneUsuario(driver).sendKeys(sTelefone);
 		Home_CadastrodeUsuario.paisUsuario(driver);
 
-		Home_CadastrodeUsuario.cidadeUsuario(driver).sendKeys("Taboao da Serra");
-		Home_CadastrodeUsuario.enderecoUsuario(driver).sendKeys("Rua Albano Leite");
-		Home_CadastrodeUsuario.estadoUsuario(driver).sendKeys("Sao Paulo");
-		Home_CadastrodeUsuario.cepUsuario(driver).sendKeys("06773-050");
+		Home_CadastrodeUsuario.cidadeUsuario(driver).sendKeys(sCidade);
+		Home_CadastrodeUsuario.enderecoUsuario(driver).sendKeys(sEndereco);
+		Home_CadastrodeUsuario.estadoUsuario(driver).sendKeys(sEstado);
+		Home_CadastrodeUsuario.cepUsuario(driver).sendKeys(sCep);
 
 		Home_CadastrodeUsuario.aceitaTermos(driver).isSelected();
 		Home_CadastrodeUsuario.aceitatermos2(driver).click();

@@ -5,6 +5,7 @@
     <classes>
       <class name="br.com.rsinet.Hub_TDD.Testes.Buscar_Produto_Por_Barra_de_Pesquisa">
         <methods>
+          <include name="testesbusca_Negativo"/>
           <include name="finalizar"/>
           <include name="iniciaReport"/>
           <include name="BuscardeProduto"/>

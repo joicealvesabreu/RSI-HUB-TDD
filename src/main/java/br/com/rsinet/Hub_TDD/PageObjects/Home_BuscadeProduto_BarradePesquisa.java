@@ -6,11 +6,13 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 public class Home_BuscadeProduto_BarradePesquisa {
-
+	
+	private static WebDriver driver;
 	private static WebElement element = null;
 
 	public static WebElement Pesquisa(WebDriver driver) {
 		element = driver.findElement(By.id("menuSearch"));
+		
 		return element;
 	}
 

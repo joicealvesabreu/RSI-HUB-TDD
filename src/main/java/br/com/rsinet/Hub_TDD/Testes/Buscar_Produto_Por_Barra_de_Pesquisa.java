@@ -30,34 +30,29 @@ public class Buscar_Produto_Por_Barra_de_Pesquisa {
 	private static ExtentHtmlReporter reporter;
 
 	@BeforeClass
-	public static void inicia() {
-		
-	ExtentHtmlReporter reporter = new ExtentHtmlReporter("./Relatorios/PesquisaPorMassaDeDados.html");
-
+	public static void iniciaReport() {
+		ExtentHtmlReporter reporter = new ExtentHtmlReporter("./Relatorios/PesquisaPorMassaDeDados.html");
 		extent = new ExtentReports();
 		extent.attachReporter(reporter);
-		
-
 	}
-	
+
 	@BeforeMethod
-	public static void InicializaBrowser(){
-		
+	public static void InicializaBrowser() {
+
 		driver = Home_ChromeDriver.InicializaDriver();
 	}
-	
 
 	@Test
-	public void BuscardeProduto() throws Exception {
-		
+	public void BuscardeProduto() throws Exception  {
 
 		logger = extent.createTest("BuscardeprodutoCerto");
-		
+
 		ExcelUtils.setExcelFile(Constant.Path_TestData + Constant.File_TestData, "Planilha1");// Chamando o Excel
 
 		Home_BuscadeProduto_BarradePesquisa.Pesquisa(driver).click();
 
-		Home_BuscadeProduto_BarradePesquisa.ProdutoPesquisado(driver).sendKeys(ExcelUtils.getCellData(1, 0) + Keys.ENTER);
+		Home_BuscadeProduto_BarradePesquisa.ProdutoPesquisado(driver)
+				.sendKeys(ExcelUtils.getCellData(1, 11) + Keys.ENTER);
 
 		boolean achouNome = driver.getPageSource().contains("HP ZBOOK 17 G2 MOBILE WORKSTATION");
 
@@ -79,9 +74,9 @@ public class Buscar_Produto_Por_Barra_de_Pesquisa {
 
 		Home_BuscadeProduto_BarradePesquisa.Botaonext(driver).click();
 
-			logger.log(Status.INFO,"Buscar o produto do excel");
-			logger.log(Status.PASS, "Sucesso");
-		
+		logger.log(Status.INFO, "Buscar o produto do excel");
+		logger.log(Status.PASS, "Sucesso");
+
 		Assert.assertTrue(achouNome);
 		System.out.println(achouNome);
 		extent.flush();
@@ -91,30 +86,30 @@ public class Buscar_Produto_Por_Barra_de_Pesquisa {
 	public void testesbusca_Negativo() throws Exception {
 
 		ExtentTest logger1 = extent.createTest("BuscardeprodutoErrado");
-		
+
 		ExcelUtils.setExcelFile(Constant.Path_TestData + Constant.File_TestData, "Planilha1");// Chamando o Excel
 
 		Home_BuscadeProduto_BarradePesquisa.Pesquisa(driver).click();
 
-		Home_BuscadeProduto_BarradePesquisa.ProdutoPesquisado(driver).sendKeys(ExcelUtils.getCellData(1, 0) + Keys.ENTER);
+		Home_BuscadeProduto_BarradePesquisa.ProdutoPesquisado(driver)
+				.sendKeys(ExcelUtils.getCellData(1, 0) + Keys.ENTER);
 
 		boolean achouprodutoerrado = driver.getPageSource().contains("HP ZEN BOOK");
 
 		Utility.getScreenshot(driver);
-		
-		logger1.log(Status.INFO,"Buscar o produto Errado");
+
+		logger1.log(Status.INFO, "Buscar o produto Errado");
 		logger1.log(Status.PASS, "nao Encontrou");
 
 		Assert.assertFalse(achouprodutoerrado);
 		System.out.println(achouprodutoerrado);
 		extent.flush();
-	
+
 	}
 
-	
 	@AfterMethod
 	public static void finalizar(ITestResult result) throws IOException {
-		
-	Home_ChromeDriver.FechandoDriver(driver);
+
+		Home_ChromeDriver.FechandoDriver(driver);
 	}
 }

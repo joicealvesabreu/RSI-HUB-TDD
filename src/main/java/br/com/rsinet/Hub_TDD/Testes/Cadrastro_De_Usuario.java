@@ -19,6 +19,7 @@ import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
 import br.com.rsinet.Hub_TDD.PageObjects.Home_CadastrodeUsuario;
 import br.com.rsinet.Hub_TDD.PageObjects.Home_ChromeDriver;
+import br.com.rsinet.Hub_TDD.Utility.Constant;
 import br.com.rsinet.Hub_TDD.Utility.ExcelUtils;
 import br.com.rsinet.Hub_TDD.Utility.Utility;
 
@@ -47,7 +48,8 @@ public class Cadrastro_De_Usuario {
 
 	@Test
 	public void cadastro_realizado_com_sucesso() throws Exception {
-
+		ExcelUtils.setExcelFile(Constant.Path_TestData + Constant.File_TestData, "Planilha1");	
+		
 		String sNome =ExcelUtils.getCellData(1, 0);
 		String sEmail = ExcelUtils.getCellData(1, 1);
 		String sSenha = ExcelUtils.getCellData(1, 2);
@@ -61,7 +63,7 @@ public class Cadrastro_De_Usuario {
 		String sCep = ExcelUtils.getCellData(1, 10);
 
 		logger = extent.createTest("Cadastrocomsucesso");
-
+		
 		Home_CadastrodeUsuario.clicarmenu(driver).click();
 		Home_CadastrodeUsuario.clicarCadastrar(driver).click();
 
@@ -100,7 +102,7 @@ public class Cadrastro_De_Usuario {
 
 	@Test
 	public void cadastrojaExistente() throws Exception {
-
+		ExcelUtils.setExcelFile(Constant.Path_TestData + Constant.File_TestData, "Planilha1");
 		logger1 = extent.createTest("JaExisteCadastro");
 		String sNome =ExcelUtils.getCellData(1, 0);
 		String sEmail = ExcelUtils.getCellData(1, 1);
@@ -140,7 +142,6 @@ public class Cadrastro_De_Usuario {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("javascript:window.scrollBy(0,200)");
 		js.executeAsyncScript("window.setTimeout(arguments[arguments.length - 1], 2000);");
-
 		Utility.getScreenshot(driver);
 		String cadastrojaexiste = driver
 				.findElement(By.xpath("//*[@id=\"registerPage\"]/article/sec-form/div[2]/label[1]")).getText();

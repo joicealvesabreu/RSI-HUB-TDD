@@ -94,7 +94,7 @@ public class Buscar_Produto_Por_Barra_de_Pesquisa {
 		Home_BuscadeProduto_BarradePesquisa.Pesquisa(driver).click();
 
 		Home_BuscadeProduto_BarradePesquisa.ProdutoPesquisado(driver)
-				.sendKeys(ExcelUtils.getCellData(1, 0) + Keys.ENTER);
+				.sendKeys(ExcelUtils.getCellData(1, 11) + Keys.ENTER);
 
 		boolean achouprodutoerrado = driver.getPageSource().contains("HP ZEN BOOK");
 

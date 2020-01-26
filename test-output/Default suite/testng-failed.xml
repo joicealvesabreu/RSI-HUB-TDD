@@ -3,14 +3,14 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="br.com.rsinet.hub.tdd.Testes.negativos.PesquisaPorMassadeDadosNegativo">
+      <class name="br.com.rsinet.hub.tdd.Testes.negativos.CadastroNegativo">
         <methods>
           <include name="report"/>
-          <include name="InicializaBrowser"/>
-          <include name="testesbusca_Negativo"/>
           <include name="finalizar"/>
+          <include name="cadastroNegativo"/>
+          <include name="InicializaBrowser"/>
         </methods>
-      </class> <!-- br.com.rsinet.hub.tdd.Testes.negativos.PesquisaPorMassadeDadosNegativo -->
+      </class> <!-- br.com.rsinet.hub.tdd.Testes.negativos.CadastroNegativo -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

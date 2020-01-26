@@ -1,9 +1,10 @@
 package br.com.rsinet.hub.tdd.Testes.negativos;
 
 
+import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
-import org.testng.Assert;
+
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
@@ -18,46 +19,48 @@ import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
 
 import br.com.rsinet.hub.tdd.PageFactory.DriverFactory;
-import br.com.rsinet.hub.tdd.PageFactory.PesquisadeProdutoPage;
+import br.com.rsinet.hub.tdd.PageFactory.TelaPrincipalPage;
 
 import br.com.rsinet.hub.tdd.Utility.Utility;
 
-public class PesquisaPorMassadeDadosNegativo {
+public class PesquisaTelaInicialNegativo {
+	
+
 	 WebDriver driver;
 	 ExtentReports extent;
-	 ExtentTest logger;
+	 ExtentTest logger, logger1;
 	 ExtentHtmlReporter reporter;
-	 PesquisadeProdutoPage produto;
+	 TelaPrincipalPage pesquisa;
 	 DriverFactory Finalizar;
-	 
-	 
+	
 	 @BeforeClass
 	 public void report() {
-		 ExtentHtmlReporter reporter = new ExtentHtmlReporter("./Relatorios/PesquisaMassadedadosNegativo.html");
+		 ExtentHtmlReporter reporter = new ExtentHtmlReporter("./Relatorios/telaprincipalnegativo.html");
 
 			extent = new ExtentReports();
 			extent.attachReporter(reporter);
-			logger = extent.createTest("Teste Pesquisa Negativo");
+			logger = extent.createTest("Teste Tela pricipal negativo");
 	 }
 	 
 	@BeforeMethod
 	public  void InicializaBrowser() {
 	
 		driver = DriverFactory.InicializaDriver();
-		produto = PageFactory.initElements(driver, PesquisadeProdutoPage.class);
+		pesquisa = PageFactory.initElements(driver, TelaPrincipalPage.class);
 		
 	}
+
 	@Test
-	public void testesbusca_Negativo() throws Exception {
+	public void cadastro1() throws Exception {
 
-		
-		produto.Pesquisa();
-		produto.ProdutoPesquisado();
-		
-		String produtoerrado = driver.getCurrentUrl();
-		Assert.assertFalse(produtoerrado.contains("https://www.advantageonlineshopping.com/#/search/?viewAll=ehsjfsvgdak"));
-
-		
+	pesquisa.telaprincipal();
+	pesquisa.produto_Laptop();
+	String clicoucerto = driver.getCurrentUrl();
+	Assert.assertFalse(clicoucerto.contains("https://www.advantageonlineshopping.com/#/product/24"));
+	pesquisa.Adicionar_Laptop();
+	pesquisa.escolhendoCor();
+	pesquisa.Confirmando();
+	pesquisa.ProdutonoCarinho();
 	
 	}
 	
@@ -76,7 +79,7 @@ public class PesquisaPorMassadeDadosNegativo {
 			logger.fail("Ocorreu um erro: ", MediaEntityBuilder.createScreenCaptureFromPath(temp).build());
 		}
 		
-		logger.log(Status.PASS, "Não Existe");
+		logger.log(Status.PASS, "erroURl");
 		extent.flush();
 		
 		DriverFactory.FechandoDriver(driver);

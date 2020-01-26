@@ -25,7 +25,7 @@ public class PesquisadeProdutoPage {
 	WebElement element = null;
 
 
-	@FindBy(how = How.ID, using = "menuSearch")
+	@FindBy(how = How.XPATH, using = "//body[contains(@class,'ng-scope')]/header/nav/ul[contains(@class,'roboto-light desktop-handler')]/li[4]/a[1]")
 	private WebElement BarradePesquisa;
 
 	@FindBy(how = How.ID, using = "autoComplete")
@@ -65,10 +65,7 @@ public class PesquisadeProdutoPage {
 		Buscandoproduto.sendKeys(ExcelUtils.getCellData(1, 11) +Keys.ENTER);
 	}
 
-	public void Produtoerrado () throws Exception {
-	    ExcelUtils.setExcelFile(Constant.Path_TestData + Constant.File_TestData, "Planilha1");
-		Buscandoprodutoerrado.sendKeys(ExcelUtils.getCellData(1, 12) +Keys.ENTER);
-	}
+	
 	
 	public void Botaofechar() {
 		JavascriptExecutor ex = (JavascriptExecutor) driver;

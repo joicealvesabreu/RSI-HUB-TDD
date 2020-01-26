@@ -52,8 +52,7 @@ public class TelaPrincipalPage {
 
 	public void produto_Laptop() {
 	produto.click();
-	String clicoucerto = driver.getCurrentUrl();
-	Assert.assertTrue(clicoucerto.contains("https://www.advantageonlineshopping.com/#/product/3"));
+
 	}
 
 	public void Adicionar_Laptop() {

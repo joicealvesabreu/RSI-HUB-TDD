@@ -9,17 +9,17 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="7">Default suite</th></tr>
-<tr><td><a href="#t0">Default test</a></td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">14,368</td><td></td><td></td></tr>
+<tr><td><a href="#t0">Default test</a></td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">35,559</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Default test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">br.com.rsinet.hub.tdd.Testes.negativos.PesquisaPorMassadeDadosNegativo</td><td><a href="#m0">testesbusca_Negativo</a></td><td rowspan="1">1580059320528</td><td rowspan="1">1144</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Default test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">br.com.rsinet.hub.tdd.Testes.negativos.CadastroNegativo</td><td><a href="#m0">cadastroNegativo</a></td><td rowspan="1">1580064674864</td><td rowspan="1">20827</td></tr></tbody>
 </table>
-<h2>Default test</h2><h3 id="m0">br.com.rsinet.hub.tdd.Testes.negativos.PesquisaPorMassadeDadosNegativo#testesbusca_Negativo</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;svg id=&quot;menuSearch&quot; version=&quot;1.1&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; x=&quot;0px&quot; y=&quot;0px&quot; width=&quot;24px&quot; height=&quot;24px&quot; viewBox=&quot;0 0 24 24&quot; enable-background=&quot;new 0 0 24 24&quot; xml:space=&quot;preserve&quot; icon-search-svg=&quot;&quot; data-ng-click=&quot;openSearchProducts()&quot;&gt;...&lt;/svg&gt; is not clickable at point (1172, 33). Other element would receive the click: &lt;div class=&quot;loader&quot; style=&quot;display: block; opacity: 1;&quot;&gt;...&lt;/div&gt;
+<h2>Default test</h2><h3 id="m0">br.com.rsinet.hub.tdd.Testes.negativos.CadastroNegativo#cadastroNegativo</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.ElementNotInteractableException: element not interactable
   (Session info: chrome=79.0.3945.130)
 Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
 System info: host: &apos;RSI1535&apos;, ip: &apos;10.0.75.1&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_231&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 79.0.3945.130, chrome: {chromedriverVersion: 79.0.3945.36 (3582db32b3389..., userDataDir: C:\Users\JOICE~1.ABR\AppDat...}, goog:chromeOptions: {debuggerAddress: localhost:60337}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: 0923183ca30f01996443a312cf5f9026
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 79.0.3945.130, chrome: {chromedriverVersion: 79.0.3945.36 (3582db32b3389..., userDataDir: C:\Users\JOICE~1.ABR\AppDat...}, goog:chromeOptions: {debuggerAddress: localhost:53845}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 8d75e75866a1aa779881b376cf30d7b2
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -31,15 +31,15 @@ Session ID: 0923183ca30f01996443a312cf5f9026
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
 	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
+	at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:106)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.lang.reflect.Method.invoke(Method.java:498)
 	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
-	at com.sun.proxy.$Proxy7.click(Unknown Source)
-	at br.com.rsinet.hub.tdd.PageFactory.PesquisadeProdutoPage.Pesquisa(PesquisadeProdutoPage.java:59)
-	at br.com.rsinet.hub.tdd.Testes.negativos.PesquisaPorMassadeDadosNegativo.testesbusca_Negativo(PesquisaPorMassadeDadosNegativo.java:56)
+	at com.sun.proxy.$Proxy7.sendKeys(Unknown Source)
+	at br.com.rsinet.hub.tdd.PageFactory.CadastroPage.cadastrar(CadastroPage.java:94)
+	at br.com.rsinet.hub.tdd.Testes.negativos.CadastroNegativo.cadastroNegativo(CadastroNegativo.java:55)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)

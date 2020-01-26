@@ -16,7 +16,7 @@ public class Utility {
 		TakesScreenshot ts = (TakesScreenshot) driver;
 		File src=ts.getScreenshotAs(OutputType.FILE);
 
-		String path = System.getProperty("user.dir") + "/PrintScreen/" + System.currentTimeMillis() + ".png";
+		String path = System.getProperty("user.dir") + "/capturadetela/" + System.currentTimeMillis() + ".png";
 
 		File destination = new File(path);
 		try {

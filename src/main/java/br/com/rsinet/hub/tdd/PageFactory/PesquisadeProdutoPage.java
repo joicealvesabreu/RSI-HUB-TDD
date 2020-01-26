@@ -25,7 +25,7 @@ public class PesquisadeProdutoPage {
 	WebElement element = null;
 
 
-	@FindBy(how = How.XPATH, using = "//body[@class='ng-scope']/header/nav/ul[@class='roboto-light desktop-handler']/li[4]/a[1]")
+	@FindBy(how = How.ID, using = "menuSearch")
 	private WebElement BarradePesquisa;
 
 	@FindBy(how = How.ID, using = "autoComplete")
@@ -43,7 +43,7 @@ public class PesquisadeProdutoPage {
 	@FindBy(how = How.XPATH, using = "//*[@id=\"searchPage\"]/div[3]/div/div/div[2]/ul/li/div[2]/label")
 	private WebElement Confirmar;
 
-	@FindBy(how = How.XPATH, using = "//span[@class='productColor ng-scope colorSelected BLACK']")
+	@FindBy(how = How.XPATH, using = "//*[@id=\"rabbit\"]")
 	private WebElement Cor;
 
 	@FindBy(how = How.NAME, using = "save_to_cart")
@@ -61,13 +61,12 @@ public class PesquisadeProdutoPage {
 	}
 
 	public void ProdutoPesquisado() throws Exception {
-		ExcelUtils.setExcelFile(
-				"C:\\Users\\joice.abreu\\eclipse-workspace\\br.com.rsinet.hub.tdd\\target\\ExcelDados.xlsx", "Planilha1");
+		 ExcelUtils.setExcelFile(Constant.Path_TestData + Constant.File_TestData, "Planilha1");
 		Buscandoproduto.sendKeys(ExcelUtils.getCellData(1, 11) +Keys.ENTER);
 	}
 
 	public void Produtoerrado () throws Exception {
-	  //  ExcelUtils.setExcelFile(Constant.Path_TestData + Constant.File_TestData, "Planilha1");
+	    ExcelUtils.setExcelFile(Constant.Path_TestData + Constant.File_TestData, "Planilha1");
 		Buscandoprodutoerrado.sendKeys(ExcelUtils.getCellData(1, 12) +Keys.ENTER);
 	}
 	

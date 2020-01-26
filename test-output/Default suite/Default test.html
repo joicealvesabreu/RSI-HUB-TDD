@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Sun Jan 26 02:37:48 BRT 2020</td>
+<td>Started on:</td><td>Sun Jan 26 14:21:48 BRT 2020</td>
 </tr>
-<tr><td>Total time:</td><td>31 seconds (31780 ms)</td>
+<tr><td>Total time:</td><td>14 seconds (14368 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -75,13 +75,34 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='br.com.rsinet.hub.tdd.Testes.Pesquisa_TelaInicial.BuscardeProduto()'><b>BuscardeProduto</b><br>Test class: br.com.rsinet.hub.tdd.Testes.Pesquisa_TelaInicial</td>
-<td><div><pre>java.lang.AssertionError: expected object to not be null
-	at org.testng.Assert.fail(Assert.java:96)
-	at org.testng.Assert.assertNotNull(Assert.java:686)
-	at org.testng.Assert.assertNotNull(Assert.java:671)
-	at br.com.rsinet.hub.tdd.PageFactory.teste.produto(teste.java:30)
-	at br.com.rsinet.hub.tdd.Testes.Pesquisa_TelaInicial.BuscardeProduto(Pesquisa_TelaInicial.java:39)
+<td title='br.com.rsinet.hub.tdd.Testes.negativos.PesquisaPorMassadeDadosNegativo.testesbusca_Negativo()'><b>testesbusca_Negativo</b><br>Test class: br.com.rsinet.hub.tdd.Testes.negativos.PesquisaPorMassadeDadosNegativo</td>
+<td><div><pre>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;svg id=&quot;menuSearch&quot; version=&quot;1.1&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; x=&quot;0px&quot; y=&quot;0px&quot; width=&quot;24px&quot; height=&quot;24px&quot; viewBox=&quot;0 0 24 24&quot; enable-background=&quot;new 0 0 24 24&quot; xml:space=&quot;preserve&quot; icon-search-svg=&quot;&quot; data-ng-click=&quot;openSearchProducts()&quot;&gt;...&lt;/svg&gt; is not clickable at point (1172, 33). Other element would receive the click: &lt;div class=&quot;loader&quot; style=&quot;display: block; opacity: 1;&quot;&gt;...&lt;/div&gt;
+  (Session info: chrome=79.0.3945.130)
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;RSI1535&apos;, ip: &apos;10.0.75.1&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_231&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 79.0.3945.130, chrome: {chromedriverVersion: 79.0.3945.36 (3582db32b3389..., userDataDir: C:\Users\JOICE~1.ABR\AppDat...}, goog:chromeOptions: {debuggerAddress: localhost:60337}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 0923183ca30f01996443a312cf5f9026
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+	at com.sun.proxy.$Proxy7.click(Unknown Source)
+	at br.com.rsinet.hub.tdd.PageFactory.PesquisadeProdutoPage.Pesquisa(PesquisadeProdutoPage.java:59)
+	at br.com.rsinet.hub.tdd.Testes.negativos.PesquisaPorMassadeDadosNegativo.testesbusca_Negativo(PesquisaPorMassadeDadosNegativo.java:56)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -107,13 +128,34 @@ function toggleAllBoxes() {
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div><a href='#' onClick='toggleBox("stack-trace483797427", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace483797427'><pre>java.lang.AssertionError: expected object to not be null
-	at org.testng.Assert.fail(Assert.java:96)
-	at org.testng.Assert.assertNotNull(Assert.java:686)
-	at org.testng.Assert.assertNotNull(Assert.java:671)
-	at br.com.rsinet.hub.tdd.PageFactory.teste.produto(teste.java:30)
-	at br.com.rsinet.hub.tdd.Testes.Pesquisa_TelaInicial.BuscardeProduto(Pesquisa_TelaInicial.java:39)
+</pre></div><a href='#' onClick='toggleBox("stack-trace965586344", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace965586344'><pre>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;svg id=&quot;menuSearch&quot; version=&quot;1.1&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; x=&quot;0px&quot; y=&quot;0px&quot; width=&quot;24px&quot; height=&quot;24px&quot; viewBox=&quot;0 0 24 24&quot; enable-background=&quot;new 0 0 24 24&quot; xml:space=&quot;preserve&quot; icon-search-svg=&quot;&quot; data-ng-click=&quot;openSearchProducts()&quot;&gt;...&lt;/svg&gt; is not clickable at point (1172, 33). Other element would receive the click: &lt;div class=&quot;loader&quot; style=&quot;display: block; opacity: 1;&quot;&gt;...&lt;/div&gt;
+  (Session info: chrome=79.0.3945.130)
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;RSI1535&apos;, ip: &apos;10.0.75.1&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_231&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 79.0.3945.130, chrome: {chromedriverVersion: 79.0.3945.36 (3582db32b3389..., userDataDir: C:\Users\JOICE~1.ABR\AppDat...}, goog:chromeOptions: {debuggerAddress: localhost:60337}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 0923183ca30f01996443a312cf5f9026
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+	at com.sun.proxy.$Proxy7.click(Unknown Source)
+	at br.com.rsinet.hub.tdd.PageFactory.PesquisadeProdutoPage.Pesquisa(PesquisadeProdutoPage.java:59)
+	at br.com.rsinet.hub.tdd.Testes.negativos.PesquisaPorMassadeDadosNegativo.testesbusca_Negativo(PesquisaPorMassadeDadosNegativo.java:56)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -140,8 +182,8 @@ function toggleAllBoxes() {
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
-<td>20</td>
-<td>br.com.rsinet.hub.tdd.Testes.Pesquisa_TelaInicial@5622fdf</td></tr>
+<td>1</td>
+<td>br.com.rsinet.hub.tdd.Testes.negativos.PesquisaPorMassadeDadosNegativo@4883b407</td></tr>
 </table><p>
 </body>
 </html>

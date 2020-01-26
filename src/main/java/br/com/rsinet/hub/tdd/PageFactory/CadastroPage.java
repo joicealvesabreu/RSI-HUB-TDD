@@ -96,7 +96,7 @@ public class CadastroPage {
 
 	public void usuario() throws Exception {
 		ExcelUtils.setExcelFile(Constant.Path_TestData + Constant.File_TestData, "Planilha1");
-		nomeUsuario.sendKeys(ExcelUtils.getCellData(13, 0));
+		nomeUsuario.sendKeys(ExcelUtils.getCellData(11, 0));
 	}
 
 	public void email() throws Exception {
@@ -173,4 +173,7 @@ public class CadastroPage {
 	public void usuariojaexiste() {
 		Usermanejaexiste.getText();
 	}
+
+
+
 }

@@ -1,4 +1,4 @@
-package br.com.rsinet.Hub_TDD.Utility;
+package br.com.rsinet.hub.tdd.Utility;
 
 public class Constant {
 
@@ -6,7 +6,7 @@ public class Constant {
 
 	public static final String ProdutoPesquisado = "HP ZBOOK 17 G2 MOBILE WORKSTATION";
 	
-	public static final String Path_TestData = "C:\\Users\\joice.abreu\\eclipse-workspace\\br.com.rsinet.Hub_TDD\\target\\";
+	public static final String Path_TestData = "C:/Users/joice.abreu/eclipse-workspace/br.com.rsinet.hub.tdd/target/";
 
 	public static final String File_TestData = "ExcelDados.xlsx";
 

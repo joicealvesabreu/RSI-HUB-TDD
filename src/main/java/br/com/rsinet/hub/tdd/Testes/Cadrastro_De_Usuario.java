@@ -1,4 +1,4 @@
-package br.com.rsinet.Hub_TDD.Testes;
+package br.com.rsinet.hub.tdd.Testes;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -17,11 +17,11 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
-import br.com.rsinet.Hub_TDD.PageObjects.Home_CadastrodeUsuario;
-import br.com.rsinet.Hub_TDD.PageObjects.Home_ChromeDriver;
-import br.com.rsinet.Hub_TDD.Utility.Constant;
-import br.com.rsinet.Hub_TDD.Utility.ExcelUtils;
-import br.com.rsinet.Hub_TDD.Utility.Utility;
+import br.com.rsinet.hub.tdd.PageObjects.Home_CadastrodeUsuario;
+import br.com.rsinet.hub.tdd.PageObjects.Home_ChromeDriver;
+import br.com.rsinet.hub.tdd.Utility.Constant;
+import br.com.rsinet.hub.tdd.Utility.ExcelUtils;
+import br.com.rsinet.hub.tdd.Utility.Utility;
 
 public class Cadrastro_De_Usuario {
 

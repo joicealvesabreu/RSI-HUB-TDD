@@ -1,4 +1,4 @@
-package br.com.rsinet.Hub_TDD.Testes;
+package br.com.rsinet.hub.tdd.Testes;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.BeforeClass;
@@ -9,7 +9,8 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
-import br.com.rsinet.Hub_TDD.PageObjects.Home_ChromeDriver;
+import br.com.rsinet.hub.tdd.PageFactory.DriverFactory;
+import br.com.rsinet.hub.tdd.PageFactory.teste;
 
 public class Pesquisa_TelaInicial {
 	
@@ -28,13 +29,14 @@ public class Pesquisa_TelaInicial {
 	@BeforeMethod
 	public static void InicializaBrowser() {
 
-		driver = Home_ChromeDriver.InicializaDriver();
+		driver = DriverFactory.InicializaDriver();
 	}
 
 	@Test
 	public void BuscardeProduto() throws Exception  {
 
-		logger = extent.createTest("PesquisandoProdutoCerto");
+		//logger = extent.createTest("PesquisandoProdutoCerto");
+		teste.produto(driver).click();
 	}
 		
 

@@ -1,14 +1,15 @@
-package br.com.rsinet.Hub_TDD.PageObjects;
+package br.com.rsinet.hub.tdd.PageFactory;
 
-import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 
-public class Home_BuscadeProduto_TelaInicial {
-
+public class teste {
+	
 	private static WebElement element = null;
+	private static WebDriver driver;
 
 	public static WebElement mouse(WebDriver driver) {
 		element = driver.findElement(By.xpath("//div[@id='laptopsImg']"));

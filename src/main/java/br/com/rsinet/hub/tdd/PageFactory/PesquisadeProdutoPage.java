@@ -1,7 +1,5 @@
 package br.com.rsinet.hub.tdd.PageFactory;
 
-
-
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -13,87 +11,94 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 
-
 import br.com.rsinet.hub.tdd.Utility.Constant;
 import br.com.rsinet.hub.tdd.Utility.ExcelUtils;
-
-
-
 
 public class PesquisadeProdutoPage {
 	WebDriver driver;
 	WebElement element = null;
+	
 
+	public PesquisadeProdutoPage(WebDriver driver) {
+		this.driver = driver;
+		PageFactory.initElements(driver, this);
+	}
+	
+	@FindBy(how = How.XPATH, using = "//body[@class='ng-scope']/header/nav/ul[@class='roboto-light desktop-handler']/li[4]/a[1]") //passo 1
+	private WebElement barradePesquisa;
 
-	@FindBy(how = How.XPATH, using = "//body[contains(@class,'ng-scope')]/header/nav/ul[contains(@class,'roboto-light desktop-handler')]/li[4]/a[1]")
-	private WebElement BarradePesquisa;
-
-	@FindBy(how = How.ID, using = "autoComplete")
-	private WebElement Buscandoproduto;
+	@FindBy(how = How.ID, using = "autoComplete") //passo 2
+	private WebElement buscandoproduto;
 	
 	@FindBy(how = How.ID, using = "autoComplete")
-	private WebElement Buscandoprodutoerrado;
+	private WebElement buscandoprodutoerrado;
 
-	@FindBy(how = How.XPATH, using = "//div[@class='autoCompleteCover']//div//img")
-	private WebElement FechandoBotao;
-
-	@FindBy(how = How.XPATH, using = "//div[@class='cell categoryRight']//li[@class='ng-scope']")
+	@FindBy(how = How.XPATH, using = "//div[@class='cell categoryRight']//li[@class='ng-scope']") //passo3
 	private WebElement clicarlaptop;
+	
+	@FindBy(how = How.XPATH, using = "//div[@class='autoCompleteCover']//div//img")
+	private WebElement fechandoBotao;
 
-	@FindBy(how = How.XPATH, using = "//*[@id=\"searchPage\"]/div[3]/div/div/div[2]/ul/li/div[2]/label")
-	private WebElement Confirmar;
+	@FindBy(how = How.XPATH, using = "//*[@id=\"searchPage\"]/div[3]/div/div/div[2]/ul/li/div[2]/label") //passo4
+	private WebElement confirmar;
 
-	@FindBy(how = How.XPATH, using = "//*[@id=\"rabbit\"]")
-	private WebElement Cor;
+	@FindBy(how = How.XPATH, using = "//span[@class='productColor ng-scope colorSelected BLACK']")
+	private WebElement cor;
 
 	@FindBy(how = How.NAME, using = "save_to_cart")
-	private WebElement Selecionar;
+	private WebElement selecionar;
 
 	@FindBy(how = How.ID, using = "checkOutPopUp") // Name = check_out_btn
-	private WebElement Carinho;
+	private WebElement carinho;
 	
 	@FindBy(how = How.XPATH, using = "//h3[@class='roboto-regular center ng-scope']")
-	private WebElement Naoencontrouproduto;
+	private WebElement naoencontrouproduto;
 
 	public void Pesquisa() {
-	BarradePesquisa.click();
+		WebDriverWait wait2 = new WebDriverWait(driver, 10);
+		wait2.until(ExpectedConditions.elementToBeClickable(barradePesquisa));
 		
 	}
 
 	public void ProdutoPesquisado() throws Exception {
-		 ExcelUtils.setExcelFile(Constant.Path_TestData + Constant.File_TestData, "Planilha1");
-		Buscandoproduto.sendKeys(ExcelUtils.getCellData(1, 11) +Keys.ENTER);
+		ExcelUtils.setExcelFile(Constant.Path_TestData + Constant.File_TestData, "Planilha1");
+		buscandoproduto.sendKeys(ExcelUtils.getCellData(1, 11) +Keys.ENTER);
 	}
 
-	
+	public void Produtoerrado () throws Exception {
+		ExcelUtils.setExcelFile(Constant.Path_TestData + Constant.File_TestData, "Planilha1");
+		buscandoprodutoerrado.sendKeys(ExcelUtils.getCellData(1, 12) +Keys.ENTER);
+	}
 	
 	public void Botaofechar() {
 		JavascriptExecutor ex = (JavascriptExecutor) driver;
-		WebElement elemento = FechandoBotao;
+		WebElement elemento = fechandoBotao;
 		ex.executeScript("arguments[0].click();", elemento);
 	}
 
 	public void Adicionarlaptop() {
-		clicarlaptop.click();
+		JavascriptExecutor ex = (JavascriptExecutor) driver;
+		WebElement elemento = clicarlaptop;
+		ex.executeScript("arguments[0].click();", elemento);
 	}
 
 	public void Confirmandolaptop() {
 		JavascriptExecutor ex = (JavascriptExecutor) driver;
-		WebElement elemento = Confirmar;
+		WebElement elemento = confirmar;
 		ex.executeScript("arguments[0].click();", elemento);
 	}
 
 	public void Cordolaptop() {
-		Cor.click();
+		cor.click();
 	}
 
 	public void Selecionandoaocarinho() {
-		Selecionar.click();
+		selecionar.click();
 	}
 
 	public void Carinhopop() {
 		JavascriptExecutor ex = (JavascriptExecutor) driver;
-		WebElement elemento = Carinho;
+		WebElement elemento = carinho;
 		ex.executeScript("arguments[0].click();", elemento);
 	}
 

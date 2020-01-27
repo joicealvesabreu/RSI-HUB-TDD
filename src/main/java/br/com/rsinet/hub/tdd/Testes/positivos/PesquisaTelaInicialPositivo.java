@@ -51,13 +51,13 @@ public class PesquisaTelaInicialPositivo {
 	}
 
 	@Test
-	public void cadastro1() throws Exception {
+	public void BuscardeProduto() throws Exception {
 
 	pesquisa.telaprincipal();
 	pesquisa.produto_Laptop();
 	String clicoucerto = driver.getCurrentUrl();
 	Assert.assertTrue(clicoucerto.contains("https://www.advantageonlineshopping.com/#/product/3"));
-	pesquisa.Adicionar_Laptop();
+	//pesquisa.Adicionar_Laptop();
 	pesquisa.escolhendoCor();
 	pesquisa.Confirmando();
 	pesquisa.ProdutonoCarinho();

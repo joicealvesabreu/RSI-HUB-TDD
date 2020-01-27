@@ -75,11 +75,10 @@ public class CadrastroPositivo {
 	cadastro.aceitaTermos_1();
 	cadastro.aceitatermos_2();
 	cadastro.regristra_usuario();
-	
 	WebDriverWait wait = new WebDriverWait(driver, 10);
 	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"menuUserLink\"]/span"))).getText();
 
-	Assert.assertTrue(driver.getPageSource().contains(ExcelUtils.getCellData(13, 0)));
+	Assert.assertTrue(driver.getPageSource().contains(ExcelUtils.getCellData(3, 0)));
 	Utility.getScreenshot(driver);
 	
 	

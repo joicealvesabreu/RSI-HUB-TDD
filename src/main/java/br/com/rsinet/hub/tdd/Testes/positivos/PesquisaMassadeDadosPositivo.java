@@ -52,21 +52,15 @@ public class PesquisaMassadeDadosPositivo {
 	public void BuscardeProduto() throws Exception  {
 
 		ExcelUtils.setExcelFile(Constant.Path_TestData + Constant.File_TestData, "Planilha1");
-
-		lupa.Pesquisa();
-
-		lupa.ProdutoPesquisado();
-
-		boolean achouNome = driver.getPageSource().contains(ExcelUtils.getCellData(1, 11));
-		
-		lupa.Adicionarlaptop();
-
-		lupa.Cordolaptop();
-
-		lupa.Selecionandoaocarinho();
-
-		lupa.Carinhopop();
-
+		 lupa.Pesquisa();
+		    lupa.ProdutoPesquisado();
+		    lupa.Adicionarlaptop();
+		    boolean achouNome = driver.getPageSource().contains(ExcelUtils.getCellData(1, 11));
+			lupa.Botaofechar();
+			lupa.Cordolaptop();
+			lupa.Selecionandoaocarinho();
+			lupa.Carinhopop();
+			
 		Assert.assertTrue(achouNome);
 
 	}
@@ -89,7 +83,7 @@ public class PesquisaMassadeDadosPositivo {
 		logger.log(Status.PASS, "ok");
 		extent.flush();
 		
-	//	DriverFactory.FechandoDriver(driver);
+		DriverFactory.FechandoDriver(driver);
 		
 		
 	}

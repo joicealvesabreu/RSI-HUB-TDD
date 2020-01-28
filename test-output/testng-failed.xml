@@ -3,14 +3,14 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="br.com.rsinet.hub.tdd.Testes.positivos.PesquisaMassadeDadosPositivo">
+      <class name="br.com.rsinet.hub.tdd.Testes.positivos.CadrastroPositivo">
         <methods>
-          <include name="finalizar"/>
-          <include name="report"/>
-          <include name="BuscardeProduto"/>
           <include name="InicializaBrowser"/>
+          <include name="cadastro1"/>
+          <include name="report"/>
+          <include name="finalizar"/>
         </methods>
-      </class> <!-- br.com.rsinet.hub.tdd.Testes.positivos.PesquisaMassadeDadosPositivo -->
+      </class> <!-- br.com.rsinet.hub.tdd.Testes.positivos.CadrastroPositivo -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

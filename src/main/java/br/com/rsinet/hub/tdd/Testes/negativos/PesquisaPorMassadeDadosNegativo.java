@@ -33,7 +33,7 @@ public class PesquisaPorMassadeDadosNegativo {
 	 
 	 @BeforeClass
 	 public void report() {
-		 ExtentHtmlReporter reporter = new ExtentHtmlReporter("./Relatorios/PesquisaMassadedadosNegativo.html");
+		 ExtentHtmlReporter reporter = new ExtentHtmlReporter("./relatorios/PesquisaMassadedadosNegativo.html");
 
 			extent = new ExtentReports();
 			extent.attachReporter(reporter);

@@ -32,7 +32,7 @@ public class CadastroNegativo {
 	 
 	 @BeforeClass
 	 public void report() {
-		 ExtentHtmlReporter reporter = new ExtentHtmlReporter("./Relatorios/cadastroNegativo.html");
+		 ExtentHtmlReporter reporter = new ExtentHtmlReporter("./relatorios/cadastroNegativo.html");
 
 			extent = new ExtentReports();
 			extent.attachReporter(reporter);

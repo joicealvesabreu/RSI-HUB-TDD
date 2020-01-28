@@ -35,7 +35,7 @@ public class PesquisaTelaInicialNegativo {
 	
 	 @BeforeClass
 	 public void report() {
-		 ExtentHtmlReporter reporter = new ExtentHtmlReporter("./Relatorios/telaprincipalnegativo.html");
+		 ExtentHtmlReporter reporter = new ExtentHtmlReporter("./relatorios/telaprincipalnegativo.html");
 
 			extent = new ExtentReports();
 			extent.attachReporter(reporter);

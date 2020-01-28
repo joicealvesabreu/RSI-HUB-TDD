@@ -2,35 +2,35 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="16320" started-at="2020-01-27T15:59:13Z" finished-at="2020-01-27T15:59:29Z">
+  <suite name="Default suite" duration-ms="15083" started-at="2020-01-28T18:22:15Z" finished-at="2020-01-28T18:22:30Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="16320" started-at="2020-01-27T15:59:13Z" finished-at="2020-01-27T15:59:29Z">
-      <class name="br.com.rsinet.hub.tdd.Testes.positivos.PesquisaMassadeDadosPositivo">
-        <test-method status="PASS" signature="report()[pri:0, instance:br.com.rsinet.hub.tdd.Testes.positivos.PesquisaMassadeDadosPositivo@4883b407]" name="report" is-config="true" duration-ms="130" started-at="2020-01-27T15:59:13Z" finished-at="2020-01-27T15:59:13Z">
+    <test name="Default test" duration-ms="15083" started-at="2020-01-28T18:22:15Z" finished-at="2020-01-28T18:22:30Z">
+      <class name="br.com.rsinet.hub.tdd.Testes.positivos.PesquisaTelaInicialPositivo">
+        <test-method status="PASS" signature="report()[pri:0, instance:br.com.rsinet.hub.tdd.Testes.positivos.PesquisaTelaInicialPositivo@57baeedf]" name="report" is-config="true" duration-ms="256" started-at="2020-01-28T18:22:15Z" finished-at="2020-01-28T18:22:15Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- report -->
-        <test-method status="PASS" signature="InicializaBrowser()[pri:0, instance:br.com.rsinet.hub.tdd.Testes.positivos.PesquisaMassadeDadosPositivo@4883b407]" name="InicializaBrowser" is-config="true" duration-ms="11221" started-at="2020-01-27T15:59:13Z" finished-at="2020-01-27T15:59:24Z">
+        <test-method status="PASS" signature="InicializaBrowser()[pri:0, instance:br.com.rsinet.hub.tdd.Testes.positivos.PesquisaTelaInicialPositivo@57baeedf]" name="InicializaBrowser" is-config="true" duration-ms="11043" started-at="2020-01-28T18:22:15Z" finished-at="2020-01-28T18:22:27Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- InicializaBrowser -->
-        <test-method status="PASS" signature="BuscardeProduto()[pri:0, instance:br.com.rsinet.hub.tdd.Testes.positivos.PesquisaMassadeDadosPositivo@4883b407]" name="BuscardeProduto" duration-ms="3723" started-at="2020-01-27T15:59:24Z" finished-at="2020-01-27T15:59:28Z">
+        <test-method status="PASS" signature="BuscardeProduto()[pri:0, instance:br.com.rsinet.hub.tdd.Testes.positivos.PesquisaTelaInicialPositivo@57baeedf]" name="BuscardeProduto" duration-ms="2048" started-at="2020-01-28T18:22:27Z" finished-at="2020-01-28T18:22:29Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- BuscardeProduto -->
-        <test-method status="PASS" signature="finalizar(org.testng.ITestResult)[pri:0, instance:br.com.rsinet.hub.tdd.Testes.positivos.PesquisaMassadeDadosPositivo@4883b407]" name="finalizar" is-config="true" duration-ms="1226" started-at="2020-01-27T15:59:28Z" finished-at="2020-01-27T15:59:29Z">
+        <test-method status="PASS" signature="finalizar(org.testng.ITestResult)[pri:0, instance:br.com.rsinet.hub.tdd.Testes.positivos.PesquisaTelaInicialPositivo@57baeedf]" name="finalizar" is-config="true" duration-ms="1700" started-at="2020-01-28T18:22:29Z" finished-at="2020-01-28T18:22:30Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=BuscardeProduto status=SUCCESS method=PesquisaMassadeDadosPositivo.BuscardeProduto()[pri:0, instance:br.com.rsinet.hub.tdd.Testes.positivos.PesquisaMassadeDadosPositivo@4883b407] output={null}]]]>
+                <![CDATA[[TestResult name=BuscardeProduto status=SUCCESS method=PesquisaTelaInicialPositivo.BuscardeProduto()[pri:0, instance:br.com.rsinet.hub.tdd.Testes.positivos.PesquisaTelaInicialPositivo@57baeedf] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- finalizar -->
-      </class> <!-- br.com.rsinet.hub.tdd.Testes.positivos.PesquisaMassadeDadosPositivo -->
+      </class> <!-- br.com.rsinet.hub.tdd.Testes.positivos.PesquisaTelaInicialPositivo -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

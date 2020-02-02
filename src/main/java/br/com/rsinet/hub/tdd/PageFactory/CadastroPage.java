@@ -14,8 +14,8 @@ import br.com.rsinet.hub.tdd.Utility.ExcelUtils;
 
 public class CadastroPage {
 
-	WebDriver driver;
-	WebElement element = null;
+public 	WebDriver driver;
+public 	WebElement element = null;
 	
 
 	public CadastroPage(WebDriver driver) {

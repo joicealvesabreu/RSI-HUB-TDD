@@ -30,12 +30,12 @@ import br.com.rsinet.hub.tdd.Utility.Utility;
 
 public class CadrastroPositivo {
 
-	 WebDriver driver;
-	 ExtentReports extent;
-	 ExtentTest logger, logger1;
-	 ExtentHtmlReporter reporter;
-	 CadastroPage cadastro;
-	 DriverFactory Finalizar;
+public	 WebDriver driver;
+public	 ExtentReports extent;
+public	 ExtentTest logger, logger1;
+public	 ExtentHtmlReporter reporter;
+public	 CadastroPage cadastro;
+public	 DriverFactory Finalizar;
 	 
 	 @BeforeClass
 	 public void report() {

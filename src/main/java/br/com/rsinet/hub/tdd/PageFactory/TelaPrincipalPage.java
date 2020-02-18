@@ -42,7 +42,37 @@ public class TelaPrincipalPage {
 
 	@FindBy(how = How.ID, using = "checkOutPopUp")
 	private WebElement Carinhopop;
-
+	
+	@FindBy(how = How.ID, using = "Description")
+	private WebElement encontrouproduto;
+			
+	@FindBy(how = How.NAME, using = "quantity")
+	private WebElement quantidadedeproduto;
+	
+	@FindBy(how = How.ID, using ="shoppingCartLink")
+	private WebElement verprodutonocarinho;
+	
+	@FindBy(how = How.XPATH, using ="//*[@id=\"shoppingCart\"]/table/tbody")
+	private WebElement acertandoqtd;
+	
+	public String acertqtd() {
+		return acertandoqtd.getText();
+	}
+	
+	public void produtonocarinho()
+	{
+		verprodutonocarinho.click();
+	}
+	
+	public void qtdproduto()
+	{
+		quantidadedeproduto.sendKeys("20");
+	}
+	public String encontrouproduto()
+	{
+		return encontrouproduto.getText();
+	}
+	
 	public void telaprincipal() {
 		
 		JavascriptExecutor ex = (JavascriptExecutor) driver;
@@ -67,7 +97,7 @@ public class TelaPrincipalPage {
 		Confirmar.click();
 	}
 
-	public void ProdutonoCarinho() {
+	public void ProdutoCarinho() {
 		
 		JavascriptExecutor ex = (JavascriptExecutor) driver;
 		WebElement element = Carinhopop;

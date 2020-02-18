@@ -4,7 +4,6 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-
 import br.com.rsinet.hub.tdd.Utility.Constant;
 
 public class DriverFactory {
@@ -12,6 +11,7 @@ public class DriverFactory {
 	private static WebDriver driver;
 
 	public static WebDriver InicializaDriver() {
+
 		if (driver == null) {
 			driver = new ChromeDriver();
 			driver.get(Constant.URL);
@@ -21,11 +21,12 @@ public class DriverFactory {
 		return driver;
 	}
 
-	public static void FechandoDriver(WebDriver driver) {
+	public static WebDriver FechandoDriver() {
 
-		if (driver != null)
+		if (driver != null) {
 			driver.quit();
+		}
+		return driver = null;
 	}
-
 
 }

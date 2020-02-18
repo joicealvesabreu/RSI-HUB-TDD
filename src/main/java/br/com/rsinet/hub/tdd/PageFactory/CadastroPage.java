@@ -14,16 +14,13 @@ import br.com.rsinet.hub.tdd.Utility.ExcelUtils;
 
 public class CadastroPage {
 
-public 	WebDriver driver;
-public 	WebElement element = null;
-	
+	public WebDriver driver;
+	public WebElement element ;
 
 	public CadastroPage(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
-
-
 
 	@FindBy(how = How.ID, using = "menuUserLink")
 	private WebElement clicarmenu;
@@ -75,13 +72,12 @@ public 	WebElement element = null;
 
 	@FindBy(how = How.ID, using = "register_btnundefined")
 	private WebElement registraUsuario;
-	
-	@FindBy(how = How.XPATH, using = "//*[@id=\"menuUserLink\"]/span")
+
+	@FindBy(how = How.ID, using = "menuUserLink")
 	private WebElement menuUserLink;
-	
-	@FindBy (how = How.XPATH, using = "//*[@id=\\\"registerPage\\\"]/article/sec-form/div[2]/label[1]")
+
+	@FindBy(how = How.XPATH, using = "//*[@id=\\\"registerPage\\\"]/article/sec-form/div[2]/label[1]")
 	private WebElement Usermanejaexiste;
-	
 
 	public void menu() {
 		JavascriptExecutor ex = (JavascriptExecutor) driver;
@@ -94,64 +90,56 @@ public 	WebElement element = null;
 		clicarCadastrar.sendKeys(Keys.ENTER);
 	}
 
-	public void usuario() throws Exception {
-		ExcelUtils.setExcelFile(Constant.Path_TestData + Constant.File_TestData, "Planilha1");
-		nomeUsuario.sendKeys(ExcelUtils.getCellData(3, 0));
+	public void nome(String usuario) throws Exception {
+
+		nomeUsuario.sendKeys(usuario); // "JGANA23"
 	}
 
-	public void email() throws Exception {
-		ExcelUtils.setExcelFile(Constant.Path_TestData + Constant.File_TestData, "Planilha1");
-		emailUsuario.sendKeys(ExcelUtils.getCellData(1, 1));
+	public void email(String email) throws InterruptedException {
+
+		emailUsuario.sendKeys(email);
 	}
 
-	public void senha() throws Exception {
-		ExcelUtils.setExcelFile(Constant.Path_TestData + Constant.File_TestData, "Planilha1");
-		senhaUsuario.sendKeys(ExcelUtils.getCellData(1, 2));
+	public void senha(String password) throws InterruptedException {
+		senhaUsuario.sendKeys(password);
 	}
 
-	public void confirmarsenha() throws Exception {
-		ExcelUtils.setExcelFile(Constant.Path_TestData + Constant.File_TestData, "Planilha1");
-		confirmasenhaUsuario.sendKeys(ExcelUtils.getCellData(1, 2));
+	public void senhaconfirm(String passwordconfirm) {
+		confirmasenhaUsuario.sendKeys(passwordconfirm);
 	}
 
-	public void primeironome() throws Exception {
-		ExcelUtils.setExcelFile(Constant.Path_TestData + Constant.File_TestData, "Planilha1");
-		primeiroNome.sendKeys(ExcelUtils.getCellData(1, 3));
+	public void pnome(String firstname) {
+		primeiroNome.sendKeys(firstname);
 	}
 
-	public void ultimonome() throws Exception {
-		ExcelUtils.setExcelFile(Constant.Path_TestData + Constant.File_TestData, "Planilha1");
-		ultimoNome.sendKeys(ExcelUtils.getCellData(1, 4));
+	public void unome(String lastname) {
+		ultimoNome.sendKeys(lastname);
 	}
 
-	public void telefone() throws Exception {
-		ExcelUtils.setExcelFile(Constant.Path_TestData + Constant.File_TestData, "Planilha1");
-		telefoneUsuario.sendKeys(ExcelUtils.getCellData(1, 5));
+	public void telefone(String phonenumber) {
+		telefoneUsuario.sendKeys(phonenumber);
 	}
 
-	public void pais() throws Exception {
-		
+	public void pais() {
+
 		new Select(paisUsuario).selectByVisibleText("Brazil");
+
 	}
 
-	public void cidade() throws Exception {
-		ExcelUtils.setExcelFile(Constant.Path_TestData + Constant.File_TestData, "Planilha1");
-		cidadeUsuario.sendKeys(ExcelUtils.getCellData(1, 7));
+	public void estado(String state) {
+		estadoUsuario.sendKeys(state);
 	}
 
-	public void endereco() throws Exception {
-		ExcelUtils.setExcelFile(Constant.Path_TestData + Constant.File_TestData, "Planilha1");
-		enderecoUsuario.sendKeys(ExcelUtils.getCellData(1, 8));
+	public void endereco(String address) {
+		enderecoUsuario.sendKeys(address);
 	}
 
-	public void estado() throws Exception {
-		ExcelUtils.setExcelFile(Constant.Path_TestData + Constant.File_TestData, "Planilha1");
-		estadoUsuario.sendKeys(ExcelUtils.getCellData(1, 9));
+	public void cidade(String city) {
+		cidadeUsuario.sendKeys(city);
 	}
 
-	public void cep() throws Exception {
-		ExcelUtils.setExcelFile(Constant.Path_TestData + Constant.File_TestData, "Planilha1");
-		cepUsuario.sendKeys(ExcelUtils.getCellData(1, 10));
+	public void cep(String zip) {
+		cepUsuario.sendKeys(zip);
 	}
 
 	public void aceitaTermos_1() {
@@ -164,16 +152,24 @@ public 	WebElement element = null;
 		ex.executeScript("arguments[0].click();", element);
 	}
 
-	public void regristra_usuario() {
+	public void regristra_usuario() throws InterruptedException {
 		registraUsuario.click();
-	}
-	public void usuariologado() {
-		menuUserLink.getText();
-	}
-	public void usuariojaexiste() {
-		Usermanejaexiste.getText();
+		Thread.sleep(5000);
 	}
 
+	public String usuariologado() {
+		return menuUserLink.getText();
+	}
+
+	public String usuariojaexiste() {
+		return Usermanejaexiste.getText();
+	}
+
+	public void esperar() {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("javascript:window.scrollBy(0,200)");
+		js.executeAsyncScript("window.setTimeout(arguments[arguments.length - 1], 2000);");
+	}
 
 
 }

@@ -12,19 +12,21 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 
 import br.com.rsinet.hub.tdd.Utility.Constant;
+import br.com.rsinet.hub.tdd.Utility.Excel;
 import br.com.rsinet.hub.tdd.Utility.ExcelUtils;
 
 public class PesquisadeProdutoPage {
-	WebDriver driver;
-	WebElement element = null;
-	
+	public WebDriver driver;
+	public WebElement element = null;
+	public Excel excel;
 
 	public PesquisadeProdutoPage(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
 	
-	@FindBy(how = How.XPATH, using = "//body[@class='ng-scope']/header/nav/ul[@class='roboto-light desktop-handler']/li[4]/a[1]") //passo 1
+	@FindBy(how = How.ID, using = "searchSection")
+			//"//body[@class='ng-scope']/header/nav/ul[@class='roboto-light desktop-handler']/li[4]/a[1]") //passo 1
 	private WebElement barradePesquisa;
 
 	@FindBy(how = How.ID, using = "autoComplete") //passo 2
@@ -51,23 +53,24 @@ public class PesquisadeProdutoPage {
 	@FindBy(how = How.ID, using = "checkOutPopUp") // Name = check_out_btn
 	private WebElement carinho;
 	
-	@FindBy(how = How.XPATH, using = "//h3[@class='roboto-regular center ng-scope']")
-	private WebElement naoencontrouproduto;
+	@FindBy(how = How.ID, using = "Description")
+	private WebElement encontrouproduto;
 
 	public void Pesquisa() {
-		WebDriverWait wait2 = new WebDriverWait(driver, 10);
-		wait2.until(ExpectedConditions.elementToBeClickable(barradePesquisa));
+		barradePesquisa.click();
+	//	WebDriverWait wait2 = new WebDriverWait(driver, 5);
+	//	wait2.until(ExpectedConditions.elementToBeClickable(barradePesquisa));
 		
 	}
 
-	public void ProdutoPesquisado() throws Exception {
-		ExcelUtils.setExcelFile(Constant.Path_TestData + Constant.File_TestData, "Planilha1");
-		buscandoproduto.sendKeys(ExcelUtils.getCellData(1, 11) +Keys.ENTER);
+	public void ProdutoPesquisado() {
+		
+		buscandoproduto.sendKeys("HP PAVILION 15Z TOUCH LAPTOP" +Keys.ENTER);
 	}
 
 	public void Produtoerrado () throws Exception {
-		ExcelUtils.setExcelFile(Constant.Path_TestData + Constant.File_TestData, "Planilha1");
-		buscandoprodutoerrado.sendKeys(ExcelUtils.getCellData(1, 12) +Keys.ENTER);
+		
+		buscandoprodutoerrado.sendKeys("HP ZEM WHQOQ");
 	}
 	
 	public void Botaofechar() {
@@ -101,6 +104,7 @@ public class PesquisadeProdutoPage {
 		WebElement elemento = carinho;
 		ex.executeScript("arguments[0].click();", elemento);
 	}
-
+ 
+	
 
 }

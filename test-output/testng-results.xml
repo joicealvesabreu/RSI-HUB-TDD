@@ -1,36 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="22785" started-at="2020-01-29T21:35:01Z" finished-at="2020-01-29T21:35:24Z">
+  <suite name="Default suite" duration-ms="55650" started-at="2020-02-18T20:00:43Z" finished-at="2020-02-18T20:01:38Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="22785" started-at="2020-01-29T21:35:01Z" finished-at="2020-01-29T21:35:24Z">
-      <class name="br.com.rsinet.hub.tdd.Testes.positivos.CadrastroPositivo">
-        <test-method status="PASS" signature="report()[pri:0, instance:br.com.rsinet.hub.tdd.Testes.positivos.CadrastroPositivo@57baeedf]" name="report" is-config="true" duration-ms="142" started-at="2020-01-29T21:35:01Z" finished-at="2020-01-29T21:35:01Z">
+    <test name="Default test" duration-ms="55650" started-at="2020-02-18T20:00:43Z" finished-at="2020-02-18T20:01:38Z">
+      <class name="br.com.rsinet.hud.tdd.testes.TesteCadastro">
+        <test-method status="PASS" signature="report()[pri:0, instance:br.com.rsinet.hud.tdd.testes.TesteCadastro@343f4d3d]" name="report" is-config="true" duration-ms="192" started-at="2020-02-18T20:00:43Z" finished-at="2020-02-18T20:00:43Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- report -->
-        <test-method status="PASS" signature="InicializaBrowser()[pri:0, instance:br.com.rsinet.hub.tdd.Testes.positivos.CadrastroPositivo@57baeedf]" name="InicializaBrowser" is-config="true" duration-ms="10807" started-at="2020-01-29T21:35:01Z" finished-at="2020-01-29T21:35:12Z">
+        <test-method status="PASS" signature="InicializaBrowser()[pri:0, instance:br.com.rsinet.hud.tdd.testes.TesteCadastro@343f4d3d]" name="InicializaBrowser" is-config="true" duration-ms="8781" started-at="2020-02-18T20:00:43Z" finished-at="2020-02-18T20:00:52Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- InicializaBrowser -->
-        <test-method status="PASS" signature="cadastro1()[pri:0, instance:br.com.rsinet.hub.tdd.Testes.positivos.CadrastroPositivo@57baeedf]" name="cadastro1" duration-ms="9744" started-at="2020-01-29T21:35:12Z" finished-at="2020-01-29T21:35:22Z">
+        <test-method status="PASS" signature="cadastro1Positivo()[pri:0, instance:br.com.rsinet.hud.tdd.testes.TesteCadastro@343f4d3d]" name="cadastro1Positivo" duration-ms="18280" started-at="2020-02-18T20:00:52Z" finished-at="2020-02-18T20:01:10Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- cadastro1 -->
-        <test-method status="PASS" signature="finalizar(org.testng.ITestResult)[pri:0, instance:br.com.rsinet.hub.tdd.Testes.positivos.CadrastroPositivo@57baeedf]" name="finalizar" is-config="true" duration-ms="2071" started-at="2020-01-29T21:35:22Z" finished-at="2020-01-29T21:35:24Z">
+        </test-method> <!-- cadastro1Positivo -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:br.com.rsinet.hud.tdd.testes.TesteCadastro@343f4d3d]" name="afterMethod" is-config="true" duration-ms="1816" started-at="2020-02-18T20:01:10Z" finished-at="2020-02-18T20:01:12Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=cadastro1 status=SUCCESS method=CadrastroPositivo.cadastro1()[pri:0, instance:br.com.rsinet.hub.tdd.Testes.positivos.CadrastroPositivo@57baeedf] output={null}]]]>
+                <![CDATA[[TestResult name=cadastro1Positivo status=SUCCESS method=TesteCadastro.cadastro1Positivo()[pri:0, instance:br.com.rsinet.hud.tdd.testes.TesteCadastro@343f4d3d] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- finalizar -->
-      </class> <!-- br.com.rsinet.hub.tdd.Testes.positivos.CadrastroPositivo -->
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="InicializaBrowser()[pri:0, instance:br.com.rsinet.hud.tdd.testes.TesteCadastro@343f4d3d]" name="InicializaBrowser" is-config="true" duration-ms="10084" started-at="2020-02-18T20:01:12Z" finished-at="2020-02-18T20:01:22Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- InicializaBrowser -->
+        <test-method status="PASS" signature="cadastro2Negativo()[pri:0, instance:br.com.rsinet.hud.tdd.testes.TesteCadastro@343f4d3d]" name="cadastro2Negativo" duration-ms="15394" started-at="2020-02-18T20:01:22Z" finished-at="2020-02-18T20:01:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- cadastro2Negativo -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:br.com.rsinet.hud.tdd.testes.TesteCadastro@343f4d3d]" name="afterMethod" is-config="true" duration-ms="1045" started-at="2020-02-18T20:01:37Z" finished-at="2020-02-18T20:01:38Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=cadastro2Negativo status=SUCCESS method=TesteCadastro.cadastro2Negativo()[pri:0, instance:br.com.rsinet.hud.tdd.testes.TesteCadastro@343f4d3d] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="finalizareport()[pri:0, instance:br.com.rsinet.hud.tdd.testes.TesteCadastro@343f4d3d]" name="finalizareport" is-config="true" duration-ms="36" started-at="2020-02-18T20:01:38Z" finished-at="2020-02-18T20:01:38Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- finalizareport -->
+      </class> <!-- br.com.rsinet.hud.tdd.testes.TesteCadastro -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

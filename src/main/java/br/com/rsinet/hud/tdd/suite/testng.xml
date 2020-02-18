@@ -1,0 +1,14 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Suite Testes- Web AdvantageDemo">
+	<test name="Test">
+		<classes>
+
+			<class 
+				name="br.com.rsinet.hud.tdd.testes.TesteCadastro" />
+			<class
+				name="br.com.rsinet.hud.tdd.testes.TesteTelaPrincipal" />
+			<class
+				name="br.com.rsinet.hud.tdd.testes.TestePesquisaPorLupa" />
+		</classes>
+	</test>
+</suite>
